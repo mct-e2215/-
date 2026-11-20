@@ -175,55 +175,439 @@ class PreviewTile(QFrame):
 class MainWindow(QMainWindow):
     def __init__(self) -> None:
         super().__init__()
-        self.setWinduïÝ-¢G§²ÚîÆ­yÐ€€€€€•¹•É…Ñ¥½¹}™½É´¹…‘‘I½Ü ‹žRš"CšzkšVÃ¾ò?–žRï–<ˆ°Í•±˜¹½Á¥•Í}ÍÁ¥¸¤(€€€€€€€•¹•É…Ñ¥½¹}™½É´¹…‘‘I½Ü ‹’æÇšVÃŽ
-ßŽóŽ$ˆ°Í•±˜¹Í••‘}ÍÁ¥¸¤(€€€€€€€•¹•É…Ñ¥½¹}™½É´¹…‘‘I½Ü ‹šr–’Ÿ–7¢¦›¢†3–n{šVÀˆ°Í•±˜¹É•ÑÉ¥•Í}ÍÁ¥¸¤(€€€€€€€±•™Ñ}±…å½ÕÐ¹…‘‘]¥‘•Ð¡•¹•É…Ñ¥½¸¤((€€€€€€€‰ÕÑÑ½¹}É½Ü€ôE!	½á1…å½ÕÐ ¤(€€€€€€€Í•±˜¹ÍÑ…ÉÑ}‰ÕÑÑ½¸€ôEAÕÍ¡	ÕÑÑ½¸ ‹žRš"C¦Z/–ž,ˆ¤(€€€€€€€Í•±˜¹ÍÑ…ÉÑ}‰ÕÑÑ½¸¹Í•Ñ=‰©•Ñ9…µ” ‰ÁÉ¥µ…Éå	ÕÑÑ½¸ˆ¤(€€€€€€€Í•±˜¹ÍÑ½Á}‰ÕÑÑ½¸€ôEAÕÍ¡	ÕÑÑ½¸ ‹–sš¶ˆˆ¤(€€€€€€€Í•±˜¹ÍÑ½Á}‰ÕÑÑ½¸¹Í•Ñ¹…‰±•¡…±Í”¤(€€€€€€€‰ÕÑÑ½¹}É½Ü¹…‘‘]¥‘•Ð¡Í•±˜¹ÍÑ…ÉÑ}‰ÕÑÑ½¸¤(€€€€€€€‰ÕÑÑ½¹}É½Ü¹…‘‘]¥‘•Ð¡Í•±˜¹ÍÑ½Á}‰ÕÑÑ½¸¤(€€€€€€€±•™Ñ}±…å½ÕÐ¹…‘‘1…å½ÕÐ¡‰ÕÑÑ½¹}É½Ü¤(€€€€€€€±•™Ñ}±…å½ÕÐ¹…‘‘MÑÉ•Ñ  Ä¤((€€€€€€€±•™Ñ}ÍÉ½±°€ôEMÉ½±±É•„ ¤(€€€€€€€±•™Ñ}ÍÉ½±°¹Í•Ñ]¥‘•ÑI•Í¥é…‰±”¡QÉÕ”¤(€€€€€€€±•™Ñ}ÍÉ½±°¹Í•ÑÉ…µ•M¡…Á”¡EÉ…µ”¹M¡…Á”¹9½É…µ”¤(€€€€€€€±•™Ñ}ÍÉ½±°¹Í•Ñ]¥‘•Ð¡±•™Ñ}½¹Ñ•¹Ð¤(€€€€€€€ÍÁ±¥ÑÑ•È¹…‘‘]¥‘•Ð¡±•™Ñ}ÍÉ½±°¤((€€€€€€€ÁÉ•Ù¥•Ý}Á…¹•°€ôE]¥‘•Ð ¤(€€€€€€€ÁÉ•Ù¥•Ý}±…å½ÕÐ€ôEY	½á1…å½ÕÐ¡ÁÉ•Ù¥•Ý}Á…¹•°¤(€€€€€€€ÁÉ•Ù¥•Ý}±…å½ÕÐ¹Í•Ñ½¹Ñ•¹ÑÍ5…É¥¹Ì à°€À°€À°€À¤(€€€€€€€ÁÉ•Ù¥•Ý}±…å½ÕÐ¹Í•ÑMÁ…¥¹œ ÄÀ¤(€€€€€€€ÁÉ•Ù¥•Ý}É½ÕÀ€ôEÉ½ÕÁ	½à ‹Ž_Ž³ŽOŽ—Žðˆ¤(€€€€€€€ÁÉ•Ù¥•Ý}É½ÕÁ}±…å½ÕÐ€ôEY	½á1…å½ÕÐ¡ÁÉ•Ù¥•Ý}É½ÕÀ¤(€€€€€€€Í•±•Ñ½É}É½Ü€ôE!	½á1…å½ÕÐ ¤(€€€€€€€Í•±•Ñ½É}É½Ü¹…‘‘]¥‘•Ð¡E1…‰•° ‹–—–*ožRï–<ˆ¤¤(€€€€€€€Í•±˜¹¥µ…•}½µ‰¼€ôE½µ‰½	½à ¤(€€€€€€€Í•±˜¹¥µ…•}½µ‰¼¹Í•Ñ5¥¹¥µÕµ]¥‘Ñ  ÈØÀ¤(€€€€€€€Í•±•Ñ½É}É½Ü¹…‘‘]¥‘•Ð¡Í•±˜¹¥µ…•}½µ‰¼°€Ä¤(€€€€€€€ÁÉ•Ù¥•Ý}É½ÕÁ}±…å½ÕÐ¹…‘‘1…å½ÕÐ¡Í•±•Ñ½É}É½Ü¤(€€€€€€€µ…¥¹}Ñ¥±•Ì€ôE!	½á1…å½ÕÐ ¤(€€€€€€€Í•±˜¹¥¹ÁÕÑ}ÁÉ•Ù¥•Ü€ôAÉ•Ù¥•ÝQ¥±” ‹–—–*ožRï–<ˆ°±…É”õQÉÕ”¤(€€€€€€€Í•±˜¹½ÕÑÁÕÑ}ÁÉ•Ù¥•Ü€ôAÉ•Ù¥•ÝQ¥±” ‹–’'š>oŽ_Ž³ŽOŽ—Žó¾ò#ŽsŽŽ
-¿Ž
-çŽïŽ
-¿Ž§Ž
-å%’îcŽ7¾ò$ˆ°±…É”õQÉÕ”¤(€€€€€€€µ…¥¹}Ñ¥±•Ì¹…‘‘]¥‘•Ð¡Í•±˜¹¥¹ÁÕÑ}ÁÉ•Ù¥•Ü°€Ä¤(€€€€€€€µ…¥¹}Ñ¥±•Ì¹…‘‘]¥‘•Ð¡Í•±˜¹½ÕÑÁÕÑ}ÁÉ•Ù¥•Ü°€Ä¤(€€€€€€€ÁÉ•Ù¥•Ý}É½ÕÁ}±…å½ÕÐ¹…‘‘1…å½ÕÐ¡µ…¥¹}Ñ¥±•Ì°€Ä¤(€€€€€€€Í•±˜¹ÁÉ•Ù¥•Ý}¥¹™¼€ôE1…‰•° ‹–—–*ožRï–?Ž£Ž§ŽgŽ¯Ž
-K¦ãŽÛŽ£Ž_Ž³ŽOŽ—ŽóŽ
-K¢†£ž’ëŽ_ŽûŽgŽˆ¤(€€€€€€€Í•±˜¹ÁÉ•Ù¥•Ý}¥¹™¼¹Í•Ñ]½É‘]É…À¡QÉÕ”¤(€€€€€€€ÁÉ•Ù¥•Ý}É½ÕÁ}±…å½ÕÐ¹…‘‘]¥‘•Ð¡Í•±˜¹ÁÉ•Ù¥•Ý}¥¹™¼¤(€€€€€€€ÁÉ•Ù¥•Ý}±…å½ÕÐ¹…‘‘]¥‘•Ð¡ÁÉ•Ù¥•Ý}É½ÕÀ°€Ì¤((€€€€€€€‰É¥¡Ñ¹•ÍÍ}É½ÕÀ€ôEÉ½ÕÁ	½à ‹šb;–ê›Ž_Ž³ŽOŽ—Žðˆ¤(€€€€€€€‰É¥¡Ñ¹•ÍÍ}±…å½ÕÐ€ôE!	½á1…å½ÕÐ¡‰É¥¡Ñ¹•ÍÍ}É½ÕÀ¤(€€€€€€€Í•±˜¹‰É¥¡Ñ¹•ÍÍ}µ¥¹}ÁÉ•Ù¥•Ü€ôAÉ•Ù¥•ÝQ¥±” ‹šr–Â?šb;–ê˜ˆ¤(€€€€€€€Í•±˜¹‰É¥¡Ñ¹•ÍÍ}½É¥¥¹…±}ÁÉ•Ù¥•Ü€ôAÉ•Ù¥•ÝQ¥±” ‹–žRï–<€ÄÀÀ”ˆ¤(€€€€€€€Í•±˜¹‰É¥¡Ñ¹•ÍÍ}µ…á}ÁÉ•Ù¥•Ü€ôAÉ•Ù¥•ÝQ¥±” ‹šr–’Ÿšb;–ê˜ˆ¤(€€€€€€€‰É¥¡Ñ¹•ÍÍ}±…å½ÕÐ¹…‘‘]¥‘•Ð¡Í•±˜¹‰É¥¡Ñ¹•ÍÍ}µ¥¹}ÁÉ•Ù¥•Ü°€Ä¤(€€€€€€€‰É¥¡Ñ¹•ÍÍ}±…å½ÕÐ¹…‘‘]¥‘•Ð¡Í•±˜¹‰É¥¡Ñ¹•ÍÍ}½É¥¥¹…±}ÁÉ•Ù¥•Ü°€Ä¤(€€€€€€€‰É¥¡Ñ¹•ÍÍ}±…å½ÕÐ¹…‘‘]¥‘•Ð¡Í•±˜¹‰É¥¡Ñ¹•ÍÍ}µ…á}ÁÉ•Ù¥•Ü°€Ä¤(€€€€€€€ÁÉ•Ù¥•Ý}±…å½ÕÐ¹…‘‘]¥‘•Ð¡‰É¥¡Ñ¹•ÍÍ}É½ÕÀ°€È¤(€€€€€€€ÍÁ±¥ÑÑ•È¹…‘‘]¥‘•Ð¡ÁÉ•Ù¥•Ý}Á…¹•°¤(€€€€€€€ÍÁ±¥ÑÑ•È¹Í•ÑM¥é•Ì¡lÐàÀ°€àÔÁt¤(€€€€€€€É½½Ð¹…‘‘]¥‘•Ð¡ÍÁ±¥ÑÑ•È°€Ä¤((€€€€€€€Í•±˜¹ÍÑ…ÑÍ}±…‰•°€ôE1…‰•° ‹–—–*ožRï–<€ÃšzkŽóŽžn»š¢gžRš"@€ÃšzkŽóŽžRš"Cšâ#Žü€Ãšzhˆ¤(€€€€€€€Í•±˜¹ÍÑ…ÑÕÍ}±…‰•°€ôE1…‰•° ‹–úš¦’â´ˆ¤(€€€€€€€É½½Ð¹…‘‘]¥‘•Ð¡Í•±˜¹ÍÑ…ÑÍ}±…‰•°¤(€€€€€€€É½½Ð¹…‘‘]¥‘•Ð¡Í•±˜¹ÍÑ…ÑÕÍ}±…‰•°¤(€€€€€€€Í•±˜¹ÁÉ½É•ÍÍ}‰…È€ôEAÉ½É•ÍÍ	…È ¤(€€€€€€€Í•±˜¹ÁÉ½É•ÍÍ}‰…È¹Í•ÑI…¹” À°€ÄÀÀ¤(€€€€€€€Í•±˜¹ÁÉ½É•ÍÍ}‰…È¹Í•ÑY…±Õ” À¤(€€€€€€€É½½Ð¹…‘‘]¥‘•Ð¡Í•±˜¹ÁÉ½É•ÍÍ}‰…È¤(€€€€€€€Í•±˜¹±½œ€ôEA±…¥¹Q•áÑ‘¥Ð ¤(€€€€€€€Í•±˜¹±½œ¹Í•ÑI•…‘=¹±ä¡QÉÕ”¤(€€€€€€€Í•±˜¹±½œ¹Í•Ñ5…á¥µÕµ	±½­½Õ¹Ð ÈÀÀÀ¤(€€€€€€€Í•±˜¹±½œ¹Í•ÑA±…•¡½±‘•ÉQ•áÐ ‹–›žBž*ÛšÎŽŽ
-£Ž§ŽóŽŽ
-çŽ
-·ŽŽ_žBžRÇŽ
-K¢†£ž’ëŽ_ŽûŽgŽˆ¤(€€€€€€€Í•±˜¹±½œ¹Í•Ñ5¥¹¥µÕµ!•¥¡Ð ÄÈÀ¤(€€€€€€€É½½Ð¹…‘‘]¥‘•Ð¡Í•±˜¹±½œ¤((€€€€€€€Í•±˜¹ÍÑ…ÉÑ}‰ÕÑÑ½¸¹±¥­•¹½¹¹•Ð¡Í•±˜¹}ÍÑ…ÉÑ}•¹•É…Ñ¥½¸¤(€€€€€€€Í•±˜¹ÍÑ½Á}‰ÕÑÑ½¸¹±¥­•¹½¹¹•Ð¡Í•±˜¹}É•ÅÕ•ÍÑ}ÍÑ½À¤(€€€€€€€Í•±˜¹¥µ…•}½µ‰¼¹ÕÉÉ•¹Ñ%¹‘•á¡…¹•¹½¹¹•Ð¡Í•±˜¹}ÕÁ‘…Ñ•}ÁÉ•Ù¥•Ü¤(€€€€€€€Í•±˜¹½Á¥•Í}ÍÁ¥¸¹Ù…±Õ•¡…¹•¹½¹¹•Ð¡Í•±˜¹}ÕÁ‘…Ñ•}½Õ¹ÑÌ¤(€€€€€€€™½ÈÝ¥‘•Ð¥¸€ (€€€€€€€€€€€Í•±˜¹É½Ñ…Ñ•}¡•¬°Í•±˜¹¡™±¥Á}¡•¬°Í•±˜¹Ù™±¥Á}¡•¬°Í•±˜¹‰É¥¡Ñ¹•ÍÍ}¡•¬°(€€€€€€€€€€€Í•±˜¹¹½¥Í•}¡•¬°(€€€€€€€€¤è(€€€€€€€€€€€Ý¥‘•Ð¹Ñ½±•¹½¹¹•Ð¡Í•±˜¹}ÕÁ‘…Ñ•}ÁÉ•Ù¥•Ü¤(€€€€€€€™½ÈÝ¥‘•Ð¥¸€ (€€€€€€€€€€€Í•±˜¹É½Ñ…Ñ•}…¹±”°Í•±˜¹‰É¥¡Ñ¹•ÍÍ}µ¥¸°Í•±˜¹‰É¥¡Ñ¹•ÍÍ}µ…à°Í•±˜¹¹½¥Í•}ÍÑÉ•¹Ñ °(€€€€€€€€€€€Í•±˜¹Í••‘}ÍÁ¥¸°(€€€€€€€€¤è(€€€€€€€€€€€Ý¥‘•Ð¹Ù…±Õ•¡…¹•¹½¹¹•Ð¡Í•±˜¹}ÕÁ‘…Ñ•}ÁÉ•Ù¥•Ü¤((€€€‘•˜}…ÁÁ±å}ÍÑå±”¡Í•±˜¤€´ø9½¹”è(€€€€€€€Í•±˜¹Í•ÑMÑå±•M¡••Ð (€€€€€€€€€€€€ˆˆˆ(€€€€€€€€€€€E5…¥¹]¥¹‘½Ü°E]¥‘•Ðì‰…­É½Õ¹è€˜Ñ˜Ù™„ì½±½Èè€ŒÅÈäÌäì™½¹ÐµÍ¥é”è€ÄÁÁÐìô(€€€€€€€€€€€EÉ½ÕÁ	½àì‰…­É½Õ¹è€™™™™™˜ì‰½É‘•Èè€ÅÁàÍ½±¥€á‘•”äì‰½É‘•ÈµÉ…‘¥ÕÌè€åÁàì(€€€€€€€€€€€€€€€€€€€€€€€µ…É¥¸µÑ½Àè€ÄÁÁàìÁ…‘‘¥¹œè€ÄÉÁà€ÄÁÁà€ÄÁÁàì™½¹ÐµÝ•¥¡Ðè€ØÀÀìô(€€€€€€€€€€€EÉ½ÕÁ	½àèéÑ¥Ñ±”ìÍÕ‰½¹ÑÉ½°µ½É¥¥¸èµ…É¥¸ì±•™Ðè€ÄÉÁàìÁ…‘‘¥¹œè€À€ÕÁàì½±½Èè€ŒÌÐÐÀÔÐìô(€€€€€€€€€€€E1¥¹•‘¥Ð°E½µ‰½	½à°EMÁ¥¹	½à°E½Õ‰±•MÁ¥¹	½à°EA±…¥¹Q•áÑ‘¥Ðì(€€€€€€€€€€€€€€€‰…­É½Õ¹è€™™™™™˜ì‰½É‘•Èè€ÅÁàÍ½±¥€‰Õ”Äì‰½É‘•ÈµÉ…‘¥ÕÌè€ÕÁàìÁ…‘‘¥¹œè€ÕÁàìô(€€€€€€€€€€€EAÕÍ¡	ÕÑÑ½¸ì‰…­É½Õ¹è€”å•‘˜Ôì‰½É‘•Èè€ÅÁàÍ½±¥€É‘…”Øì‰½É‘•ÈµÉ…‘¥ÕÌè€ÙÁàì(€€€€€€€€€€€€€€€€€€€€€€€€€Á…‘‘¥¹œè€áÁà€ÄÉÁàì™½¹ÐµÝ•¥¡Ðè€ØÀÀìô(€€€€€€€€€€€EAÕÍ¡	ÕÑÑ½¸é¡½Ù•Èì‰…­É½Õ¹è€‘™”Ý˜Ììô(€€€€€€€€€€€EAÕÍ¡	ÕÑÑ½¸é‘¥Í…‰±•ì½±½Èè€Œäá„ÉˆÌìô(€€€€€€€€€€€EAÕÍ¡	ÕÑÑ½¸ÁÉ¥µ…Éå	ÕÑÑ½¸ì‰…­É½Õ¹è€ŒÈÐÔÝŒÔì½±½Èè€™™™™™˜ì‰½É‘•Èè€Àìô(€€€€€€€€€€€EAÕÍ¡	ÕÑÑ½¸ÁÉ¥µ…Éå	ÕÑÑ½¸é¡½Ù•Èì‰…­É½Õ¹è€ŒÄäÐÝ„àìô(€€€€€€€€€€€E1…‰•°…ÁÁQ¥Ñ±”ì™½¹ÐµÍ¥é”è€ÄåÁÐì™½¹ÐµÝ•¥¡Ðè€ÜÀÀì½±½Èè€ŒÄÀÉ„ÔØìô(€€€€€€€€€€€E1…‰•°…ÁÁMÕ‰Ñ¥Ñ±”ì½±½Èè€ŒØØÜÀàÔìÁ…‘‘¥¹œµ‰½ÑÑ½´è€ÑÁàìô(€€€€€€€€€€€EÉ…µ”ÁÉ•Ù¥•ÝQ¥±”ì‰…­É½Õ¹è€™™™™™˜ì‰½É‘•Èè€ÅÁàÍ½±¥€”Á”Õ•ì‰½É‘•ÈµÉ…‘¥ÕÌè€ÝÁàìô(€€€€€€€€€€€E1…‰•°ÁÉ•Ù¥•ÝQ¥Ñ±”ì™½¹ÐµÝ•¥¡Ðè€ØÀÀì½±½Èè€ŒÐÜÔÐØÜìÁ…‘‘¥¹œè€ÍÁà€ÕÁàìô(€€€€€€€€€€€E1…‰•°ÁÉ•Ù¥•Ý%µ…”ì‰…­É½Õ¹è€˜á™…™Œì‰½É‘•ÈµÉ…‘¥ÕÌè€ÕÁàì½±½Èè€Œäá„ÉˆÌìô(€€€€€€€€€€€EAÉ½É•ÍÍ	…Èì‰…­É½Õ¹è€”å•‘˜Ôì‰½É‘•Èè€Àì‰½É‘•ÈµÉ…‘¥ÕÌè€ÕÁàì¡•¥¡Ðè€ÄÍÁàìÑ•áÐµ…±¥¸è•¹Ñ•Èìô(€€€€€€€€€€€EAÉ½É•ÍÍ	…Èèé¡Õ¹¬ì‰…­É½Õ¹è€ŒÌÔÜÑ‘˜ì‰½É‘•ÈµÉ…‘¥ÕÌè€ÕÁàìô(€€€€€€€€€€€€ˆˆˆ(€€€€€€€€¤((€€€‘•˜}½¹™¥œ¡Í•±˜°É•ÅÕ¥É•}½ÕÑÁÕÐè‰½½°€ôQÉÕ”¤€´øÕµ•¹Ñ½¹™¥œè(€€€€€€€¥˜¹½ÐÍ•±˜¹¥µ…•Í}Á¥­•È¹Á…Ñ¡}•‘¥Ð¹Ñ•áÐ ¤¹ÍÑÉ¥À ¤½È¹½ÐÍ•±˜¹±…‰•±Í}Á¥­•È¹Á…Ñ¡}•‘¥Ð¹Ñ•áÐ ¤¹ÍÑÉ¥À ¤è(€€€€€€€€€€€É…¥Í”%¹ÁÕÑÉÉ½È ‹–—–*ožRï–?ŽWŽ
-§Ž¯ŽŽ£–—–*oŽ§ŽgŽ¯ŽWŽ
-§Ž¯ŽŽ
-Kš2–ºkŽ_Ž›Ž?ŽƒŽWŽŽˆ¤(€€€€€€€¥˜É•ÅÕ¥É•}½ÕÑÁÕÐ…¹¹½ÐÍ•±˜¹½ÕÑÁÕÑ}Á¥­•È¹Á…Ñ¡}•‘¥Ð¹Ñ•áÐ ¤¹ÍÑÉ¥À ¤è(€€€€€€€€€€€É…¥Í”%¹ÁÕÑÉÉ½È ‹–ë–*oŽWŽ
-§Ž¯ŽŽ
-Kš2–ºkŽ_Ž›Ž?ŽƒŽWŽŽˆ¤(€€€€€€€É•ÑÕÉ¸Õµ•¹Ñ½¹™¥œ (€€€€€€€€€€€¥µ…•Í}‘¥ÈõÍ•±˜¹¥µ…•Í}Á¥­•È¹Á…Ñ  ¤°(€€€€€€€€€€€±…‰•±Í}‘¥ÈõÍ•±˜¹±…‰•±Í}Á¥­•È¹Á…Ñ  ¤°(€€€€€€€€€€€½ÕÑÁÕÑ}‘¥ÈõÍ•±˜¹½ÕÑÁÕÑ}Á¥­•È¹Á…Ñ  ¤¥˜Í•±˜¹½ÕÑÁÕÑ}Á¥­•È¹Á…Ñ¡}•‘¥Ð¹Ñ•áÐ ¤¹ÍÑÉ¥À ¤•±Í”A…Ñ ¹Ý ¤€¼€‰½ÕÑÁÕÐˆ°(€€€€€€€€€€€½Á¥•Í}Á•É}¥µ…”õÍ•±˜¹½Á¥•Í}ÍÁ¥¸¹Ù…±Õ” ¤°(€€€€€€€€€€€É½Ñ…Ñ•}•¹…‰±•õÍ•±˜¹É½Ñ…Ñ•}¡•¬¹¥Í¡•­• ¤°(€€€€€€€€€€€É½Ñ…Ñ•}±¥µ¥ÐõÍ•±˜¹É½Ñ…Ñ•}…¹±”¹Ù…±Õ” ¤°(€€€€€€€€€€€¡™±¥Á}•¹…‰±•õÍ•±˜¹¡™±¥Á}¡•¬¹¥Í¡•­• ¤°(€€€€€€€€€€€Ù™±¥Á}•¹…‰±•õÍ•±˜¹Ù™±¥Á}¡•¬¹¥Í¡•­• ¤°(€€€€€€€€€€€‰É¥¡Ñ¹•ÍÍ}•¹…‰±•õÍ•±˜¹‰É¥¡Ñ¹•ÍÍ}¡•¬¹¥Í¡•­• ¤°(€€€€€€€€€€€‰É¥¡Ñ¹•ÍÍ}µ¥¸õ™±½…Ð¡Í•±˜¹‰É¥¡Ñ¹•ÍÍ}µ¥¸¹Ù…±Õ” ¤¤°(€€€€€€€€€€€‰É¥¡Ñ¹•ÍÍ}µ…àõ™±½…Ð¡Í•±˜¹‰É¥¡Ñ¹•ÍÍ}µ…à¹Ù…±Õ” ¤¤°(€€€€€€€€€€€¹½¥Í•}•¹…‰±•õÍ•±˜¹¹½¥Í•}¡•¬¹¥Í¡•­• ¤°(€€€€€€€€€€€¹½¥Í•}ÍÑÉ•¹Ñ õÍ•±˜¹¹½¥Í•}ÍÑÉ•¹Ñ ¹Ù…±Õ” ¤°(€€€€€€€€€€€Í••õÍ•±˜¹Í••‘}ÍÁ¥¸¹Ù…±Õ” ¤°(€€€€€€€€€€€µ…á}É•ÑÉ¥•ÌõÍ•±˜¹É•ÑÉ¥•Í}ÍÁ¥¸¹Ù…±Õ” ¤°(€€€€€€€€¤((€€€‘•˜}É•™É•Í¡}¥¹ÁÕÑ}¡½¥•Ì¡Í•±˜¤€´ø9½¹”è(€€€€€€€ÁÉ•Ù¥½ÕÌ€ôÍ•±˜¹¥µ…•}½µ‰¼¹ÕÉÉ•¹Ñ…Ñ„ ¤(€€€€€€€ÑÉäè(€€€€€€€€€€€Á…Ñ¡Ì€ô±¥ÍÑ}¥µ…•}™¥±•Ì¡Í•±˜¹¥µ…•Í}Á¥­•È¹Á…Ñ  ¤¤(€€€€€€€•á•ÁÐ€¡%¹ÁÕÑÉÉ½È°=MÉÉ½È¤è(€€€€€€€€€€€Á…Ñ¡Ì€ômt(€€€€€€€Í•±˜¹}Í•±•Ñ•‘}Á…Ñ¡Ì€ôÁ…Ñ¡Ì(€€€€€€€Í•±˜¹¥µ…•}½µ‰¼¹‰±½­M¥¹…±Ì¡QÉÕ”¤(€€€€€€€Í•±˜¹¥µ…•}½µ‰¼¹±•…È ¤(€€€€€€€™½ÈÁ…Ñ ¥¸Á…Ñ¡Ìè(€€€€€€€€€€€Í•±˜¹¥µ…•}½µ‰¼¹…‘‘%Ñ•´¡Á…Ñ ¹¹…µ”°ÍÑÈ¡Á…Ñ ¤¤(€€€€€€€¥˜ÁÉ•Ù¥½ÕÌè(€€€€€€€€€€€¥¹‘•à€ôÍ•±˜¹¥µ…•}½µ‰¼¹™¥¹‘…Ñ„¡ÁÉ•Ù¥½ÕÌ¤(€€€€€€€€€€€¥˜¥¹‘•à€øô€Àè(€€€€€€€€€€€€€€€Í•±˜¹¥µ…•}½µ‰¼¹Í•ÑÕÉÉ•¹Ñ%¹‘•à¡¥¹‘•à¤(€€€€€€€Í•±˜¹¥µ…•}½µ‰¼¹‰±½­M¥¹…±Ì¡…±Í”¤(€€€€€€€Í•±˜¹}ÕÁ‘…Ñ•}½Õ¹ÑÌ ¤(€€€€€€€Í•±˜¹}ÕÁ‘…Ñ•}ÁÉ•Ù¥•Ü ¤((€€€‘•˜}ÕÁ‘…Ñ•}½Õ¹ÑÌ¡Í•±˜¤€´ø9½¹”è(€€€€€€€½Õ¹Ð€ô±•¸¡Í•±˜¹}Í•±•Ñ•‘}Á…Ñ¡Ì¤(€€€€€€€Ñ…É•Ð€ô½Õ¹Ð€¨Í•±˜¹½Á¥•Í}ÍÁ¥¸¹Ù…±Õ” ¤(€€€€€€€ÕÉÉ•¹Ñ}•¹•É…Ñ•€ôÍ•±˜¹Ý½É­•È¹É•Á½ÉÑl‰•¹•É…Ñ•‰t¥˜Í•±˜¹Ý½É­•È…¹Í•±˜¹Ý½É­•È¹É•Á½ÉÐ•±Í”€À(€€€€€€€Í•±˜¹ÍÑ…ÑÍ}±…‰•°¹Í•ÑQ•áÐ (€€€€€€€€€€€˜‹–—–*ožRï–<í½Õ¹Ðè±÷šzkŽóŽžn»š¢gžRš"@íÑ…É•Ðè±÷šzkŽóŽžRš"Cšâ#ŽüíÕÉÉ•¹Ñ}•¹•É…Ñ•è±÷šzhˆ(€€€€€€€€¤((€€€‘•˜}ÕÁ‘…Ñ•}ÁÉ•Ù¥•Ü¡Í•±˜°€©}…ÉÌ¤€´ø9½¹”è(€€€€€€€Á…Ñ¡}Ñ•áÐ€ôÍ•±˜¹¥µ…•}½µ‰¼¹ÕÉÉ•¹Ñ…Ñ„ ¤(€€€€€€€¥˜¹½ÐÁ…Ñ¡}Ñ•áÐè(€€€€€€€€€€€Í•±˜¹¥¹ÁÕÑ}ÁÉ•Ù¥•Ü¹±•…É}¥µ…” ¤(€€€€€€€€€€€Í•±˜¹½ÕÑÁÕÑ}ÁÉ•Ù¥•Ü¹±•…É}¥µ…” ¤(€€€€€€€€€€€™½ÈÑ¥±”¥¸€¡Í•±˜¹‰É¥¡Ñ¹•ÍÍ}µ¥¹}ÁÉ•Ù¥•Ü°Í•±˜¹‰É¥¡Ñ¹•ÍÍ}½É¥¥¹…±}ÁÉ•Ù¥•Ü°Í•±˜¹‰É¥¡Ñ¹•ÍÍ}µ…á}ÁÉ•Ù¥•Ü¤è(€€€€€€€€€€€€€€€Ñ¥±”¹±•…É}¥µ…” ¤(€€€€€€€€€€€É•ÑÕÉ¸(€€€€€€€¥µ…•}Á…Ñ €ôA…Ñ ¡Á…Ñ¡}Ñ•áÐ¤(€€€€€€€ÑÉäè(€€€€€€€€€€€Í½ÕÉ”€ô±½…‘}Í½ÕÉ”¡¥µ…•}Á…Ñ °Í•±˜¹±…‰•±Í}Á¥­•È¹Á…Ñ  ¤¤(€€€€€€€€€€€¥µ…”€ôÍ½ÕÉ”¹¥µ…”(€€€€€€€€€€€Í•±˜¹}±…ÍÑ}Í½ÕÉ•}¥µ…”€ô¥µ…”(€€€€€€€€€€€Í•±˜¹¥¹ÁÕÑ}ÁÉ•Ù¥•Ü¹Í¡½Ý}¥µ…”¡¥µ…”¤(€€€€€€€€€€€±½Ü€ô¹À¹±¥À¡¥µ…”¹…ÍÑåÁ”¡¹À¹™±½…ÐÌÈ¤€¨€¡Í•±˜¹‰É¥¡Ñ¹•ÍÍ}µ¥¸¹Ù…±Õ” ¤€¼€ÄÀÀ¸À¤°€À°€ÈÔÔ¤¹…ÍÑåÁ”¡¹À¹Õ¥¹Ðà¤(€€€€€€€€€€€¡¥ €ô¹À¹±¥À¡¥µ…”¹…ÍÑåÁ”¡¹À¹™±½…ÐÌÈ¤€¨€¡Í•±˜¹‰É¥¡Ñ¹•ÍÍ}µ…à¹Ù…±Õ” ¤€¼€ÄÀÀ¸À¤°€À°€ÈÔÔ¤¹…ÍÑåÁ”¡¹À¹Õ¥¹Ðà¤(€€€€€€€€€€€Í•±˜¹‰É¥¡Ñ¹•ÍÍ}µ¥¹}ÁÉ•Ù¥•Ü¹Ñ¥Ñ±•}±…‰•°¹Í•ÑQ•áÐ¡˜‹šr–Â?šb;–ê˜íÍ•±˜¹‰É¥¡Ñ¹•ÍÍ}µ¥¸¹Ù…±Õ” ¥ô”ˆ¤(€€€€€€€€€€€Í•±˜¹‰É¥¡Ñ¹•ÍÍ}½É¥¥¹…±}ÁÉ•Ù¥•Ü¹Ñ¥Ñ±•}±…‰•°¹Í•ÑQ•áÐ ‹–žRï–<€ÄÀÀ”ˆ¤(€€€€€€€€€€€Í•±˜¹‰É¥¡Ñ¹•ÍÍ}µ…á}ÁÉ•Ù¥•Ü¹Ñ¥Ñ±•}±…‰•°¹Í•ÑQ•áÐ¡˜‹šr–’Ÿšb;–ê˜íÍ•±˜¹‰É¥¡Ñ¹•ÍÍ}µ…à¹Ù…±Õ” ¥ô”ˆ¤(€€€€€€€€€€€Í•±˜¹‰É¥¡Ñ¹•ÍÍ}µ¥¹}ÁÉ•Ù¥•Ü¹Í¡½Ý}¥µ…”¡±½Ü¤(€€€€€€€€€€€Í•±˜¹‰É¥¡Ñ¹•ÍÍ}½É¥¥¹…±}ÁÉ•Ù¥•Ü¹Í¡½Ý}¥µ…”¡¥µ…”¤(€€€€€€€€€€€Í•±˜¹‰É¥¡Ñ¹•ÍÍ}µ…á}ÁÉ•Ù¥•Ü¹Í¡½Ý}¥µ…”¡¡¥ ¤(€€€€€€€€€€€½¹™¥œ€ôÍ•±˜¹}½¹™¥œ¡É•ÅÕ¥É•}½ÕÑÁÕÐõ…±Í”¤(€€€€€€€€€€€ÁÉ•Ù¥•Ý}É¹œ€ôÉ…¹‘½´¹I…¹‘½´ (€€€€€€€€€€€€€€€¥¹Ð¹™É½µ}‰åÑ•Ì (€€€€€€€€€€€€€€€€€€€¡…Í¡±¥ˆ¹Í¡„ÈÔØ¡˜‰í½¹™¥œ¹Í••‘ôéí¥µ…•}Á…Ñ ¹¹…µ•ôéÁÉ•Ù¥•Üˆ¹•¹½‘” ‰ÕÑ˜´àˆ¤¤¹‘¥•ÍÐ ¥lèát°(€€€€€€€€€€€€€€€€€€€€‰‰¥œˆ°(€€€€€€€€€€€€€€€€¤(€€€€€€€€€€€€¤(€€€€€€€€€€€…¹‘¥‘…Ñ”€ô9½¹”(€€€€€€€€€€€É•…Í½¸€ô€ˆˆ(€€€€€€€€€€€™½È…ÑÑ•µÁÐ¥¸É…¹”¡½¹™¥œ¹µ…á}É•ÑÉ¥•Ì¤è(€€€€€€€€€€€€€€€ÑÉäè(€€€€€€€€€€€€€€€€€€€…¹‘¥‘…Ñ”€ôÉ•…Ñ•}…¹‘¥‘…Ñ”¡Í½ÕÉ”¹¥µ…”°Í½ÕÉ”¹‰½á•Ì°½¹™¥œ°ÁÉ•Ù¥•Ý}É¹œ°Ù…É¥…¹Ñ}¥¹‘•àõ…ÑÑ•µÁÐ€¬€Ä¤(€€€€€€€€€€€€€€€€€€€‰É•…¬(€€€€€€€€€€€€€€€•á•ÁÐ…¹‘¥‘…Ñ•I•©•Ñ•…Ì•áŒè(€€€€€€€€€€€€€€€€€€€É•…Í½¸€ôÍÑÈ¡•áŒ¤(€€€€€€€€€€€¥˜…¹‘¥‘…Ñ”¥Ì9½¹”è(€€€€€€€€€€€€€€€É…¥Í”%¹ÁÕÑÉÉ½È¡˜‹–’'š>oŽ_Ž³ŽOŽ—ŽóŽ
-K’ösŽ
-3ŽûŽoŽ
-OŽŸŽ_ŽŽ	íÉ•…Í½¹ôˆ¤(€€€€€€€€€€€Í•±˜¹½ÕÑÁÕÑ}ÁÉ•Ù¥•Ü¹Í¡½Ý}¥µ…”¡‘É…Ý}‰½á•Ì¡…¹‘¥‘…Ñ”¹¥µ…”°…¹‘¥‘…Ñ”¹‰½á•Ì¤¤(€€€€€€€€€€€±…ÍÍ}¥‘Ì€ô€ˆ°€ˆ¹©½¥¸¡ÍÑÈ¡‰½à¹±…ÍÍ}¥¤™½È‰½à¥¸…¹‘¥‘…Ñ”¹‰½á•Ì¤½È€‹Ž§ŽgŽ¯Ž«Ž\ˆ(€€€€€€€€€€€ÑÉ…¹Í™½Éµ}Ñ•áÐ€ô€ˆ°€ˆ¹©½¥¸¡…¹‘¥‘…Ñ”¹Á±…¸¹½Á•É…Ñ¥½¹Ì¤(€€€€€€€€€€€¥˜€‰É½Ñ…Ñ”ˆ¥¸…¹‘¥‘…Ñ”¹Á±…¸¹½Á•É…Ñ¥½¹Ìè(€€€€€€€€€€€€€€€ÑÉ…¹Í™½Éµ}Ñ•áÐ€¬ô˜‹¾ò!í…¹‘¥‘…Ñ”¹Á±…¸¹…¹±”è¸Å™÷
-Ã¾ò$ˆ(€€€€€€€€€€€¥˜€‰‰É¥¡Ñ¹•ÍÌˆ¥¸…¹‘¥‘…Ñ”¹Á±…¸¹½Á•É…Ñ¥½¹Ìè(€€€€€€€€€€€€€€€ÑÉ…¹Í™½Éµ}Ñ•áÐ€¬ô˜ˆƒšb;–ê™í…¹‘¥‘…Ñ”¹Á±…¸¹‰É¥¡Ñ¹•ÍÌ€¨€ÄÀÀè¸Á™ô”ˆ(€€€€€€€€€€€Í•±˜¹ÁÉ•Ù¥•Ý}¥¹™¼¹Í•ÑQ•áÐ¡˜‹–’'š>lèíÑÉ…¹Í™½Éµ}Ñ•áÑ÷ŽóŽž&§’öOšVÀèí±•¸¡…¹‘¥‘…Ñ”¹‰½á•Ì¥÷ŽóŽŽ
-¿Ž§Ž
-å%èí±…ÍÍ}¥‘Íôˆ¤(€€€€€€€•á•ÁÐá•ÁÑ¥½¸…Ì•áŒè(€€€€€€€€€€€Í•±˜¹}±…ÍÑ}Í½ÕÉ•}¥µ…”€ô9½¹”(€€€€€€€€€€€Í•±˜¹¥¹ÁÕÑ}ÁÉ•Ù¥•Ü¹±•…É}¥µ…” ‹–—–*ožRï–?Ž
-K¢ª·Žÿ¢úóŽ
-ŽûŽoŽ
-Lˆ¤(€€€€€€€€€€€Í•±˜¹½ÕÑÁÕÑ}ÁÉ•Ù¥•Ü¹±•…É}¥µ…” ‹Ž_Ž³ŽOŽ—ŽóŽ
-K¢†£ž’ëŽŸŽ7ŽûŽoŽ
-Lˆ¤(€€€€€€€€€€€™½ÈÑ¥±”¥¸€¡Í•±˜¹‰É¥¡Ñ¹•ÍÍ}µ¥¹}ÁÉ•Ù¥•Ü°Í•±˜¹‰É¥¡Ñ¹•ÍÍ}½É¥¥¹…±}ÁÉ•Ù¥•Ü°Í•±˜¹‰É¥¡Ñ¹•ÍÍ}µ…á}ÁÉ•Ù¥•Ü¤è(€€€€€€€€€€€€€€€Ñ¥±”¹±•…É}¥µ…” ‹Ž_Ž³ŽOŽ—ŽóŽ
-K¢†£ž’ëŽŸŽ7ŽûŽoŽ
-Lˆ¤(€€€€€€€€€€€Í•±˜¹ÁÉ•Ù¥•Ý}¥¹™¼¹Í•ÑQ•áÐ¡ÍÑÈ¡•áŒ¤¤((€€€‘•˜}ÍÑ…ÉÑ}•¹•É…Ñ¥½¸¡Í•±˜¤€´ø9½¹”è(€€€€€€€¥˜Í•±˜¹Ý½É­•È…¹Í•±˜¹Ý½É­•È¹¥ÍIÕ¹¹¥¹œ ¤è(€€€€€€€€€€€É•ÑÕÉ¸(€€€€€€€ÑÉäè(€€€€€€€€€€€½¹™¥œ€ôÍ•±˜¹}½¹™¥œ ¤(€€€€€€€€€€€Ù…±¥‘…Ñ•}½¹™¥œ¡½¹™¥œ¤(€€€€€€€€€€€¥µ…•Ì€ô±¥ÍÑ}¥µ…•}™¥±•Ì¡½¹™¥œ¹¥µ…•Í}‘¥È¤(€€€€€€€€€€€¥˜¹½Ð¥µ…•Ìè(€€€€€€€€€€€€€€€É…¥Í”%¹ÁÕÑÉÉ½È¡˜‹–—–*ožRï–?Ž3ŽŽ
-+ŽûŽoŽ
-Lèí½¹™¥œ¹¥µ…•Í}‘¥Éôˆ¤(€€€€€€€€€€€¥˜¹½Ð½¹™¥œ¹±…‰•±Í}‘¥È¹¥Í}‘¥È ¤è(€€€€€€€€€€€€€€€É…¥Í”%¹ÁÕÑÉÉ½È¡˜‹–—–*oŽ§ŽgŽ¯ŽWŽ
-§Ž¯ŽŽ3–¶c–r£Ž_ŽûŽoŽ
-Lèí½¹™¥œ¹±…‰•±Í}‘¥Éôˆ¤(€€€€€€€€€€€¥˜½¹™¥œ¹½ÕÑÁÕÑ}‘¥È€ôô½¹™¥œ¹¥µ…•Í}‘¥È½È½¹™¥œ¹½ÕÑÁÕÑ}‘¥È€ôô½¹™¥œ¹±…‰•±Í}‘¥Èè(€€€€€€€€€€€€€€€É…¥Í”%¹ÁÕÑÉÉ½È ‹–ë–*o–#Ž¿–—–*ožRï–?ŽïŽ§ŽgŽ¯ŽWŽ
-§Ž¯ŽŽ£–"ŽGŽ›Ž?ŽƒŽWŽŽˆ¤(€€€€€€€•á•ÁÐ€¡%¹ÁÕÑÉÉ½È°=MÉÉ½È¤…Ì•áŒè(€€€€€€€€€€€E5•ÍÍ…•	½à¹Ý…É¹¥¹œ¡Í•±˜°€‹¢¢·–ºkŽ
-KžŠë¢ª7Ž_Ž›Ž?ŽƒŽWŽˆ°ÍÑÈ¡•áŒ¤¤(€€€€€€€€€€€É•ÑÕÉ¸((€€€€€€€Í•±˜¹ÁÉ½É•ÍÍ}‰…È¹Í•ÑY…±Õ” À¤(€€€€€€€Í•±˜¹±½œ¹…ÁÁ•¹‘A±…¥¹Q•áÐ ˆ´´´ƒžRš"CŽ
-K¦Z/–ž/Ž_ŽûŽd€´´´ˆ¤(€€€€€€€Í•±˜¹ÍÑ…ÑÕÍ}±…‰•°¹Í•ÑQ•áÐ ‹–"wšr–2[’â·Š˜ˆ¤(€€€€€€€Í•±˜¹Ý½É­•È€ô•¹•É…Ñ¥½¹]½É­•È¡½¹™¥œ¤(€€€€€€€Í•±˜¹Ý½É­•È¹ÁÉ½É•ÍÍ}¡…¹•¹½¹¹•Ð¡Í•±˜¹}½¹}ÁÉ½É•ÍÌ¤(€€€€€€€Í•±˜¹Ý½É­•È¹±½}µ•ÍÍ…”¹½¹¹•Ð¡Í•±˜¹±½œ¹…ÁÁ•¹‘A±…¥¹Q•áÐ¤(€€€€€€€Í•±˜¹Ý½É­•È¹ÁÉ•Ù¥•Ý}É•…‘ä¹½¹¹•Ð¡Í•±˜¹}Í¡½Ý}Í…Ù•‘}ÁÉ•Ù¥•Ü¤(€€€€€€€Í•±˜¹Ý½É­•È¹™¥¹¥Í¡•¹½¹¹•Ð¡Í•±˜¹}½¹}™¥¹¥Í¡•¤(€€€€€€€Í•±˜¹}Í•Ñ}‰ÕÍä¡QÉÕ”¤(€€€€€€€Í•±˜¹Ý½É­•È¹ÍÑ…ÉÐ ¤((€€€‘•˜}Í•Ñ}‰ÕÍä¡Í•±˜°‰ÕÍäè‰½½°¤€´ø9½¹”è(€€€€€€€Í•±˜¹ÍÑ…ÉÑ}‰ÕÑÑ½¸¹Í•Ñ¹…‰±•¡¹½Ð‰ÕÍä¤(€€€€€€€Í•±˜¹ÍÑ½Á}‰ÕÑÑ½¸¹Í•Ñ¹…‰±•¡‰ÕÍä¤(€€€€€€€™½ÈÝ¥‘•Ð¥¸€ (€€€€€€€€€€€Í•±˜¹¥µ…•Í}Á¥­•È°Í•±˜¹±…‰•±Í}Á¥­•È°Í•±˜¹½ÕÑÁÕÑ}Á¥­•È°(€€€€€€€€€€€Í•±˜¹É½Ñ…Ñ•}¡•¬°Í•±˜¹É½Ñ…Ñ•}…¹±”°Í•±˜¹¡™±¥Á}¡•¬°Í•±˜¹Ù™±¥Á}¡•¬°(€€€€€€€€€€€Í•±˜¹‰É¥¡Ñ¹•ÍÍ}¡•¬°Í•±˜¹‰É¥¡Ñ¹•ÍÍ}µ¥¸°Í•±˜¹‰É¥¡Ñ¹•ÍÍ}µ…à°(€€€€€€€€€€€Í•±˜¹¹½¥Í•}¡•¬°Í•±˜¹¹½¥Í•}ÍÑÉ•¹Ñ °Í•±˜¹½Á¥•Í}ÍÁ¥¸°Í•±˜¹Í••‘}ÍÁ¥¸°Í•±˜¹É•ÑÉ¥•Í}ÍÁ¥¸°(€€€€€€€€¤è(€€€€€€€€€€€Ý¥‘•Ð¹Í•Ñ¹…‰±•¡¹½Ð‰ÕÍä¤((€€€‘•˜}É•ÅÕ•ÍÑ}ÍÑ½À¡Í•±˜¤€´ø9½¹”è(€€€€€€€¥˜Í•±˜¹Ý½É­•È…¹Í•±˜¹Ý½É­•È¹¥ÍIÕ¹¹¥¹œ ¤è(€€€€€€€€€€€Í•±˜¹Ý½É­•È¹É•ÅÕ•ÍÑ}ÍÑ½À ¤(€€€€€€€€€€€Í•±˜¹ÍÑ½Á}‰ÕÑÑ½¸¹Í•Ñ¹…‰±•¡…±Í”¤(€€€€€€€€€€€Í•±˜¹ÍÑ…ÑÕÍ}±…‰•°¹Í•ÑQ•áÐ ‹–sš¶‹¢ššÆŽ
-K–>_ŽG’îcŽGŽûŽ_ŽŽž>û–r£Ž»žRï–?Ž£Ž§ŽgŽ¯Ž
-K’þw–¶c–ú3Ž¯–sš¶‹Ž_ŽûŽgŠ˜ˆ¤((€€€‘•˜}½¹}ÁÉ½É•ÍÌ¡Í•±˜°ÕÉÉ•¹Ñ}™¥±”è¥¹Ð°Ñ½Ñ…±}™¥±•Ìè¥¹Ð°•¹•É…Ñ•è¥¹Ð°Ñ…É•Ðè¥¹Ð°Í½ÕÉ•}¹…µ”èÍÑÈ¤€´ø9½¹”è(€€€€€€€Á•É•¹Ñ…”€ô¥¹Ð¡ÕÉÉ•¹Ñ}™¥±”€¨€ÄÀÀ€¼Ñ½Ñ…±}™¥±•Ì¤¥˜Ñ½Ñ…±}™¥±•Ì•±Í”€À(€€€€€€€Í•±˜¹ÁÉ½É•ÍÍ}‰…È¹Í•ÑY…±Õ”¡Á•É•¹Ñ…”¤(€€€€€€€Í•±˜¹ÍÑ…ÑÕÍ}±…‰•°¹Í•ÑQ•áÐ (€€€€€€€€€€€˜‹–›žB’â´èíÍ½ÕÉ•}¹…µ•÷ŽóŽ–—–*líÕÉÉ•¹Ñ}™¥±•ô½íÑ½Ñ…±}™¥±•Í÷ŽóŽžRš"@í•¹•É…Ñ•‘ô½íÑ…É•Ñôˆ(€€€€€€€€¤(€€€€€€€Í•±˜¹ÍÑ…ÑÍ}±…‰•°¹Í•ÑQ•áÐ (€€€€€€€€€€€˜‹–—–*ožRï–<íÑ½Ñ…±}™¥±•Ìè±÷šzkŽóŽžn»š¢gžRš"@íÑ…É•Ðè±÷šzkŽóŽžRš"Cšâ#Žüí•¹•É…Ñ•è±÷šzhˆ(€€€€€€€€¤((€€€‘•˜}Í¡½Ý}Í…Ù•‘}ÁÉ•Ù¥•Ü¡Í•±˜°¥µ…•}Á…Ñ èÍÑÈ°±…‰•±}Á…Ñ èÍÑÈ¤€´ø9½¹”è(€€€€€€€¥µ…”€ôØÈ¹¥µÉ•…¡¥µ…•}Á…Ñ °ØÈ¹%5I}=1=H¤(€€€€€€€¥˜¥µ…”¥Ì9½¹”è(€€€€€€€€€€€É•ÑÕÉ¸(€€€€€€€ÑÉäè(€€€€€€€€€€€‰½á•Ì€ôÁ…ÉÍ•}å½±½}±…‰•±Ì¡A…Ñ ¡±…‰•±}Á…Ñ ¤¤(€€€€€€€•á•ÁÐ%¹ÁÕÑÉÉ½Èè(€€€€€€€€€€€É•ÑÕÉ¸(€€€€€€€Í•±˜¹½ÕÑÁÕÑ}ÁÉ•Ù¥•Ü¹Í¡½Ý}¥µ…”¡‘É…Ý}‰½á•Ì¡¥µ…”°‰½á•Ì¤¤(€€€€€€€±…ÍÍ}¥‘Ì€ô€ˆ°€ˆ¹©½¥¸¡ÍÑÈ¡‰½à¹±…ÍÍ}¥¤™½È‰½à¥¸‰½á•Ì¤½È€‹Ž§ŽgŽ¯Ž«Ž\ˆ(€€€€€€€Í•±˜¹ÁÉ•Ù¥•Ý}¥¹™¼¹Í•ÑQ•áÐ¡˜‹–ë–*oŽ_Ž³ŽOŽ—ŽðèíA…Ñ ¡¥µ…•}Á…Ñ ¤¹¹…µ•÷ŽóŽž&§’öOšVÀèí±•¸¡‰½á•Ì¥÷ŽóŽŽ
-¿Ž§Ž
-å%èí±…ÍÍ}¥‘Íôˆ¤((€€€‘•˜}½¹}™¥¹¥Í¡•¡Í•±˜¤€´ø9½¹”è(€€€€€€€Í•±˜¹}Í•Ñ}‰ÕÍä¡…±Í”¤(€€€€€€€¥˜¹½ÐÍ•±˜¹Ý½É­•Èè(€€€€€€€€€€€É•ÑÕÉ¸(€€€€€€€¥˜Í•±˜¹Ý½É­•È¹•ÉÉ½Èè(€€€€€€€€€€€Í•±˜¹ÍÑ…ÑÕÍ}±…‰•°¹Í•ÑQ•áÐ ‹–›žBŽ
-KžÖ’êŽ_ŽûŽ_Ž¾ò#Ž
-£Ž§Žó¾ò$ˆ¤(€€€€€€€€€€€Í•±˜¹±½œ¹…ÁÁ•¹‘A±…¥¹Q•áÐ¡˜‹Ž
-£Ž§ŽðèíÍ•±˜¹Ý½É­•È¹•ÉÉ½Éôˆ¤(€€€€€€€€€€€E5•ÍÍ…•	½à¹É¥Ñ¥…°¡Í•±˜°€‹žRš"CŽ
-£Ž§Žðˆ°Í•±˜¹Ý½É­•È¹•ÉÉ½È¤(€€€€€€€€€€€É•ÑÕÉ¸(€€€€€€€É•Á½ÉÐ€ôÍ•±˜¹Ý½É­•È¹É•Á½ÉÐ½Èíô(€€€€€€€•¹•É…Ñ•°Ñ…É•Ð€ô¥¹Ð¡É•Á½ÉÐ¹•Ð ‰•¹•É…Ñ•ˆ°€À¤¤°¥¹Ð¡É•Á½ÉÐ¹•Ð ‰Ñ…É•Ðˆ°€À¤¤(€€€€€€€Í¡½ÉÑ…”€ôµ…à À°Ñ…É•Ð€´•¹•É…Ñ•¤(€€€€€€€¡…±Ñ•€ô‰½½°¡É•Á½ÉÐ¹•Ð ‰¡…±Ñ•ˆ°…±Í”¤¤(€€€€€€€Í•±˜¹ÁÉ½É•ÍÍ}‰…È¹Í•ÑY…±Õ” ÄÀÀ¥˜¹½Ð¡…±Ñ••±Í”Í•±˜¹ÁÉ½É•ÍÍ}‰…È¹Ù…±Õ” ¤¤(€€€€€€€É•ÍÕ±Ð€ô˜‹žRš"Cšâ#Žüí•¹•É…Ñ•è±ô½íÑ…É•Ðè±÷šzhˆ(€€€€€€€¥˜É•Á½ÉÐ¹•Ð ‰Í­¥ÁÁ•‘}Í½ÕÉ•Ìˆ¤½ÈÉ•Á½ÉÐ¹•Ð ‰Í­¥ÁÁ•‘}½ÕÑÁÕÑÌˆ¤è(€€€€€€€€€€€É•ÍÕ±Ð€¬ô˜‹ŽóŽ–—–*oŽ
-çŽ
-·ŽŽ\íÉ•Á½ÉÐ¹•Ð Í­¥ÁÁ•‘}Í½ÕÉ•Ìœ°€À¥÷’îÛŽóŽžRš"CŽ
-çŽ
-·ŽŽ\íÉ•Á½ÉÐ¹•Ð Í­¥ÁÁ•‘}½ÕÑÁÕÑÌœ°€À¥÷šzhˆ(€€€€€€€¥˜Í¡½ÉÑ…”è(€€€€€€€€€€€É•ÍÕ±Ð€¬ô˜‹ŽóŽžn»š¢gšr«¦PíÍ¡½ÉÑ…”è±÷šzhˆ(€€€€€€€¥˜¡…±Ñ•è(€€€€€€€€€€€É•ÍÕ±Ð€ô€‹–sš¶‹Ž_ŽûŽ_ŽŽˆ€¬É•ÍÕ±Ð(€€€€€€€•±Í”è(€€€€€€€€€€€É•ÍÕ±Ð€ô€‹–º3’êŽˆ€¬É•ÍÕ±Ð(€€€€€€€Í•±˜¹ÍÑ…ÑÕÍ}±…‰•°¹Í•ÑQ•áÐ¡É•ÍÕ±Ð¤(€€€€€€€Í•±˜¹±½œ¹…ÁÁ•¹‘A±…¥¹Q•áÐ¡É•ÍÕ±Ð¤(€€€€€€€Í•±˜¹}ÕÁ‘…Ñ•}½Õ¹ÑÌ ¤((€€€‘•˜±½Í•Ù•¹Ð¡Í•±˜°•Ù•¹Ð¤€´ø9½¹”è(€€€€€€€¥˜Í•±˜¹Ý½É­•È…¹Í•±˜¹Ý½É­•È¹¥ÍIÕ¹¹¥¹œ ¤è(€€€€€€€€€€€E5•ÍÍ…•	½à¹¥¹™½Éµ…Ñ¥½¸¡Í•±˜°€‹–›žB’â´ˆ°€‹–sš¶‹ŽsŽ
-ÿŽÏŽŸ–›žBŽ
-K–sš¶‹Ž_Ž›Ž/Ž
-'¦Z'ŽcŽ›Ž?ŽƒŽWŽŽˆ¤(€€€€€€€€€€€•Ù•¹Ð¹¥¹½É” ¤(€€€€€€€€€€€É•ÑÕÉ¸(€€€€€€€•Ù•¹Ð¹…•ÁÐ ¤(
+        self.setWindowTitle("YOLO å­¦ç¿’ç”»åƒãƒ‡ãƒ¼ã‚¿æ‹¡å¼µ")
+        self.resize(1380, 960)
+        self.setMinimumSize(1120, 760)
+        self.worker: GenerationWorker | None = None
+        self._selected_paths: list[Path] = []
+        self._last_source_image: np.ndarray | None = None
+        self._build_ui()
+        self._apply_style()
+        self._folder_timer = QTimer(self)
+        self._folder_timer.setSingleShot(True)
+        self._folder_timer.setInterval(300)
+        self._folder_timer.timeout.connect(self._refresh_input_choices)
+        self.images_picker.path_edit.textChanged.connect(lambda _text: self._folder_timer.start())
+        self.labels_picker.path_edit.textChanged.connect(lambda _text: self._folder_timer.start())
+        self._refresh_input_choices()
+
+    def _build_ui(self) -> None:
+        central = QWidget()
+        self.setCentralWidget(central)
+        root = QVBoxLayout(central)
+        root.setContentsMargins(18, 14, 18, 14)
+        root.setSpacing(10)
+
+        title = QLabel("YOLO å­¦ç¿’ç”»åƒãƒ‡ãƒ¼ã‚¿æ‹¡å¼µ")
+        title.setObjectName("appTitle")
+        subtitle = QLabel("ç”»åƒã¨YOLOãƒ©ãƒ™ãƒ«ã‚’åŒã˜å¤‰æ›ã§æ‹¡å¼µã—ã¾ã™ã€‚åˆ‡ã‚Œã‚‹ãƒœãƒƒã‚¯ã‚¹ãŒã‚ã‚‹å€™è£œã¯è‡ªå‹•ã§å†ç”Ÿæˆã—ã¾ã™ã€‚")
+        subtitle.setObjectName("appSubtitle")
+        root.addWidget(title)
+        root.addWidget(subtitle)
+
+        splitter = QSplitter(Qt.Orientation.Horizontal)
+        splitter.setChildrenCollapsible(False)
+        left_content = QWidget()
+        left_layout = QVBoxLayout(left_content)
+        left_layout.setContentsMargins(0, 0, 8, 0)
+        left_layout.setSpacing(10)
+
+        folders = QGroupBox("ãƒ•ã‚©ãƒ«ãƒ€")
+        folder_form = QFormLayout(folders)
+        self.images_picker = FolderPicker("å…¥åŠ›ç”»åƒãƒ•ã‚©ãƒ«ãƒ€ã‚’é¸æŠž")
+        self.labels_picker = FolderPicker("å…¥åŠ›ãƒ©ãƒ™ãƒ«ãƒ•ã‚©ãƒ«ãƒ€ã‚’é¸æŠž")
+        self.output_picker = FolderPicker("å‡ºåŠ›ãƒ•ã‚©ãƒ«ãƒ€ã‚’é¸æŠž")
+        folder_form.addRow("å…¥åŠ›ç”»åƒ", self.images_picker)
+        folder_form.addRow("å…¥åŠ›ãƒ©ãƒ™ãƒ«", self.labels_picker)
+        folder_form.addRow("å‡ºåŠ›å…ˆ", self.output_picker)
+        left_layout.addWidget(folders)
+
+        transformations = QGroupBox("å¤‰æ›è¨­å®š")
+        transform_form = QFormLayout(transformations)
+        self.rotate_check = QCheckBox("å›žè»¢ã‚’é©ç”¨")
+        self.rotate_check.setChecked(True)
+        self.rotate_angle = QDoubleSpinBox()
+        self.rotate_angle.setRange(0.1, 180.0)
+        self.rotate_angle.setDecimals(1)
+        self.rotate_angle.setSingleStep(1.0)
+        self.rotate_angle.setValue(30.0)
+        angle_row = QWidget()
+        angle_layout = QHBoxLayout(angle_row)
+        angle_layout.setContentsMargins(0, 0, 0, 0)
+        angle_layout.addWidget(self.rotate_check)
+        angle_layout.addWidget(QLabel("æœ€å¤§è§’åº¦"))
+        angle_layout.addWidget(self.rotate_angle)
+        angle_layout.addWidget(QLabel("Â°"))
+        angle_layout.addStretch(1)
+        transform_form.addRow("å›žè»¢", angle_row)
+
+        self.hflip_check = QCheckBox("å·¦å³åè»¢ã‚’é©ç”¨")
+        self.hflip_check.setChecked(True)
+        transform_form.addRow("å·¦å³åè»¢", self.hflip_check)
+        self.vflip_check = QCheckBox("ä¸Šä¸‹åè»¢ã‚’é©ç”¨")
+        transform_form.addRow("ä¸Šä¸‹åè»¢", self.vflip_check)
+
+        self.brightness_check = QCheckBox("æ˜Žåº¦å¤‰æ›´ã‚’é©ç”¨")
+        self.brightness_check.setChecked(True)
+        self.brightness_min = QSpinBox()
+        self.brightness_min.setRange(1, 300)
+        self.brightness_min.setValue(50)
+        self.brightness_max = QSpinBox()
+        self.brightness_max.setRange(1, 300)
+        self.brightness_max.setValue(150)
+        brightness_row = QWidget()
+        brightness_layout = QHBoxLayout(brightness_row)
+        brightness_layout.setContentsMargins(0, 0, 0, 0)
+        brightness_layout.addWidget(self.brightness_check)
+        brightness_layout.addWidget(QLabel("æœ€å°"))
+        brightness_layout.addWidget(self.brightness_min)
+        brightness_layout.addWidget(QLabel("%ã€€æœ€å¤§"))
+        brightness_layout.addWidget(self.brightness_max)
+        brightness_layout.addWidget(QLabel("%"))
+        brightness_layout.addStretch(1)
+        transform_form.addRow("æ˜Žåº¦", brightness_row)
+
+        self.noise_check = QCheckBox("ãƒŽã‚¤ã‚ºã‚’è¿½åŠ ")
+        self.noise_strength = QSpinBox()
+        self.noise_strength.setRange(1, 30)
+        self.noise_strength.setValue(8)
+        noise_row = QWidget()
+        noise_layout = QHBoxLayout(noise_row)
+        noise_layout.setContentsMargins(0, 0, 0, 0)
+        noise_layout.addWidget(self.noise_check)
+        noise_layout.addWidget(QLabel("å¼·ã•"))
+        noise_layout.addWidget(self.noise_strength)
+        noise_layout.addWidget(QLabel("(æœ€å¤§30)"))
+        noise_layout.addStretch(1)
+        transform_form.addRow("ãƒŽã‚¤ã‚º", noise_row)
+        left_layout.addWidget(transformations)
+
+        generation = QGroupBox("ç”Ÿæˆè¨­å®š")
+        generation_form = QFormLayout(generation)
+        self.copies_spin = QSpinBox()
+        self.copies_spin.setRange(1, 10000)
+        self.copies_spin.setValue(10)
+        self.seed_spin = QSpinBox()
+        self.seed_spin.setRange(-2147483648, 2147483647)
+        self.seed_spin.setValue(42)
+        self.retries_spin = QSpinBox()
+        self.retries_spin.setRange(1, 500)
+        self.retries_spin.setValue(50)
+        generation_form.addRow("ç”Ÿæˆæžšæ•°ï¼å…ƒç”»åƒ", self.copies_spin)
+        generation_form.addRow("ä¹±æ•°ã‚·ãƒ¼ãƒ‰", self.seed_spin)
+        generation_form.addRow("æœ€å¤§å†è©¦è¡Œå›žæ•°", self.retries_spin)
+        left_layout.addWidget(generation)
+
+        button_row = QHBoxLayout()
+        self.start_button = QPushButton("ç”Ÿæˆé–‹å§‹")
+        self.start_button.setObjectName("primaryButton")
+        self.stop_button = QPushButton("åœæ­¢")
+        self.stop_button.setEnabled(False)
+        button_row.addWidget(self.start_button)
+        button_row.addWidget(self.stop_button)
+        left_layout.addLayout(button_row)
+        left_layout.addStretch(1)
+
+        left_scroll = QScrollArea()
+        left_scroll.setWidgetResizable(True)
+        left_scroll.setFrameShape(QFrame.Shape.NoFrame)
+        left_scroll.setWidget(left_content)
+        splitter.addWidget(left_scroll)
+
+        preview_panel = QWidget()
+        preview_layout = QVBoxLayout(preview_panel)
+        preview_layout.setContentsMargins(8, 0, 0, 0)
+        preview_layout.setSpacing(10)
+        preview_group = QGroupBox("ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼")
+        preview_group_layout = QVBoxLayout(preview_group)
+        selector_row = QHBoxLayout()
+        selector_row.addWidget(QLabel("å…¥åŠ›ç”»åƒ"))
+        self.image_combo = QComboBox()
+        self.image_combo.setMinimumWidth(260)
+        selector_row.addWidget(self.image_combo, 1)
+        preview_group_layout.addLayout(selector_row)
+        main_tiles = QHBoxLayout()
+        self.input_preview = PreviewTile("å…¥åŠ›ç”»åƒ", large=True)
+        self.output_preview = PreviewTile("å¤‰æ›ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ï¼ˆãƒœãƒƒã‚¯ã‚¹ãƒ»ã‚¯ãƒ©ã‚¹IDä»˜ãï¼‰", large=True)
+        main_tiles.addWidget(self.input_preview, 1)
+        main_tiles.addWidget(self.output_preview, 1)
+        preview_group_layout.addLayout(main_tiles, 1)
+        self.preview_info = QLabel("å…¥åŠ›ç”»åƒã¨ãƒ©ãƒ™ãƒ«ã‚’é¸ã¶ã¨ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ã‚’è¡¨ç¤ºã—ã¾ã™ã€‚")
+        self.preview_info.setWordWrap(True)
+        preview_group_layout.addWidget(self.preview_info)
+        preview_layout.addWidget(preview_group, 3)
+
+        brightness_group = QGroupBox("æ˜Žåº¦ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼")
+        brightness_layout = QHBoxLayout(brightness_group)
+        self.brightness_min_preview = PreviewTile("æœ€å°æ˜Žåº¦")
+        self.brightness_original_preview = PreviewTile("å…ƒç”»åƒ 100%")
+        self.brightness_max_preview = PreviewTile("æœ€å¤§æ˜Žåº¦")
+        brightness_layout.addWidget(self.brightness_min_preview, 1)
+        brightness_layout.addWidget(self.brightness_original_preview, 1)
+        brightness_layout.addWidget(self.brightness_max_preview, 1)
+        preview_layout.addWidget(brightness_group, 2)
+        splitter.addWidget(preview_panel)
+        splitter.setSizes([480, 850])
+        root.addWidget(splitter, 1)
+
+        self.stats_label = QLabel("å…¥åŠ›ç”»åƒ 0æžšã€€|ã€€ç›®æ¨™ç”Ÿæˆ 0æžšã€€|ã€€ç”Ÿæˆæ¸ˆã¿ 0æžš")
+        self.status_label = QLabel("å¾…æ©Ÿä¸­")
+        root.addWidget(self.stats_label)
+        root.addWidget(self.status_label)
+        self.progress_bar = QProgressBar()
+        self.progress_bar.setRange(0, 100)
+        self.progress_bar.setValue(0)
+        root.addWidget(self.progress_bar)
+        self.log = QPlainTextEdit()
+        self.log.setReadOnly(True)
+        self.log.setMaximumBlockCount(2000)
+        self.log.setPlaceholderText("å‡¦ç†çŠ¶æ³ã€ã‚¨ãƒ©ãƒ¼ã€ã‚¹ã‚­ãƒƒãƒ—ç†ç”±ã‚’è¡¨ç¤ºã—ã¾ã™ã€‚")
+        self.log.setMinimumHeight(120)
+        root.addWidget(self.log)
+
+        self.start_button.clicked.connect(self._start_generation)
+        self.stop_button.clicked.connect(self._request_stop)
+        self.image_combo.currentIndexChanged.connect(self._update_preview)
+        self.copies_spin.valueChanged.connect(self._update_counts)
+        for widget in (
+            self.rotate_check, self.hflip_check, self.vflip_check, self.brightness_check,
+            self.noise_check,
+        ):
+            widget.toggled.connect(self._update_preview)
+        for widget in (
+            self.rotate_angle, self.brightness_min, self.brightness_max, self.noise_strength,
+            self.seed_spin,
+        ):
+            widget.valueChanged.connect(self._update_preview)
+
+    def _apply_style(self) -> None:
+        self.setStyleSheet(
+            """
+            QMainWindow, QWidget { background: #f4f6fa; color: #1d2939; font-size: 10pt; }
+            QGroupBox { background: #ffffff; border: 1px solid #d8dee9; border-radius: 9px;
+                        margin-top: 10px; padding: 12px 10px 10px; font-weight: 600; }
+            QGroupBox::title { subcontrol-origin: margin; left: 12px; padding: 0 5px; color: #344054; }
+            QLineEdit, QComboBox, QSpinBox, QDoubleSpinBox, QPlainTextEdit {
+                background: #ffffff; border: 1px solid #cbd5e1; border-radius: 5px; padding: 5px; }
+            QPushButton { background: #e9edf5; border: 1px solid #d2dae6; border-radius: 6px;
+                          padding: 8px 12px; font-weight: 600; }
+            QPushButton:hover { background: #dfe7f3; }
+            QPushButton:disabled { color: #98a2b3; }
+            QPushButton#primaryButton { background: #2457c5; color: #ffffff; border: 0; }
+            QPushButton#primaryButton:hover { background: #1947a8; }
+            QLabel#appTitle { font-size: 19pt; font-weight: 700; color: #102a56; }
+            QLabel#appSubtitle { color: #667085; padding-bottom: 4px; }
+            QFrame#previewTile { background: #ffffff; border: 1px solid #e0e5ed; border-radius: 7px; }
+            QLabel#previewTitle { font-weight: 600; color: #475467; padding: 3px 5px; }
+            QLabel#previewImage { background: #f8fafc; border-radius: 5px; color: #98a2b3; }
+            QProgressBar { background: #e9edf5; border: 0; border-radius: 5px; height: 13px; text-align: center; }
+            QProgressBar::chunk { background: #3574df; border-radius: 5px; }
+            """
+        )
+
+    def _config(self, require_output: bool = True) -> AugmentConfig:
+        if not self.images_picker.path_edit.text().strip() or not self.labels_picker.path_edit.text().strip():
+            raise InputError("å…¥åŠ›ç”»åƒãƒ•ã‚©ãƒ«ãƒ€ã¨å…¥åŠ›ãƒ©ãƒ™ãƒ«ãƒ•ã‚©ãƒ«ãƒ€ã‚’æŒ‡å®šã—ã¦ãã ã•ã„ã€‚")
+        if require_output and not self.output_picker.path_edit.text().strip():
+            raise InputError("å‡ºåŠ›ãƒ•ã‚©ãƒ«ãƒ€ã‚’æŒ‡å®šã—ã¦ãã ã•ã„ã€‚")
+        return AugmentConfig(
+            images_dir=self.images_picker.path(),
+            labels_dir=self.labels_picker.path(),
+            output_dir=self.output_picker.path() if self.output_picker.path_edit.text().strip() else Path.cwd() / "output",
+            copies_per_image=self.copies_spin.value(),
+            rotate_enabled=self.rotate_check.isChecked(),
+            rotate_limit=self.rotate_angle.value(),
+            hflip_enabled=self.hflip_check.isChecked(),
+            vflip_enabled=self.vflip_check.isChecked(),
+            brightness_enabled=self.brightness_check.isChecked(),
+            brightness_min=float(self.brightness_min.value()),
+            brightness_max=float(self.brightness_max.value()),
+            noise_enabled=self.noise_check.isChecked(),
+            noise_strength=self.noise_strength.value(),
+            seed=self.seed_spin.value(),
+            max_retries=self.retries_spin.value(),
+        )
+
+    def _refresh_input_choices(self) -> None:
+        previous = self.image_combo.currentData()
+        try:
+            paths = list_image_files(self.images_picker.path())
+        except (InputError, OSError):
+            paths = []
+        self._selected_paths = paths
+        self.image_combo.blockSignals(True)
+        self.image_combo.clear()
+        for path in paths:
+            self.image_combo.addItem(path.name, str(path))
+        if previous:
+            index = self.image_combo.findData(previous)
+            if index >= 0:
+                self.image_combo.setCurrentIndex(index)
+        self.image_combo.blockSignals(False)
+        self._update_counts()
+        self._update_preview()
+
+    def _update_counts(self) -> None:
+        count = len(self._selected_paths)
+        target = count * self.copies_spin.value()
+        current_generated = self.worker.report["generated"] if self.worker and self.worker.report else 0
+        self.stats_label.setText(
+            f"å…¥åŠ›ç”»åƒ {count:,}æžšã€€|ã€€ç›®æ¨™ç”Ÿæˆ {target:,}æžšã€€|ã€€ç”Ÿæˆæ¸ˆã¿ {current_generated:,}æžš"
+        )
+
+    def _update_preview(self, *_args) -> None:
+        path_text = self.image_combo.currentData()
+        if not path_text:
+            self.input_preview.clear_image()
+            self.output_preview.clear_image()
+            for tile in (self.brightness_min_preview, self.brightness_original_preview, self.brightness_max_preview):
+                tile.clear_image()
+            return
+        image_path = Path(path_text)
+        try:
+            source = load_source(image_path, self.labels_picker.path())
+            image = source.image
+            self._last_source_image = image
+            self.input_preview.show_image(image)
+            low = np.clip(image.astype(np.float32) * (self.brightness_min.value() / 100.0), 0, 255).astype(np.uint8)
+            high = np.clip(image.astype(np.float32) * (self.brightness_max.value() / 100.0), 0, 255).astype(np.uint8)
+            self.brightness_min_preview.title_label.setText(f"æœ€å°æ˜Žåº¦ {self.brightness_min.value()}%")
+            self.brightness_original_preview.title_label.setText("å…ƒç”»åƒ 100%")
+            self.brightness_max_preview.title_label.setText(f"æœ€å¤§æ˜Žåº¦ {self.brightness_max.value()}%")
+            self.brightness_min_preview.show_image(low)
+            self.brightness_original_preview.show_image(image)
+            self.brightness_max_preview.show_image(high)
+            config = self._config(require_output=False)
+            preview_rng = random.Random(
+                int.from_bytes(
+                    hashlib.sha256(f"{config.seed}:{image_path.name}:preview".encode("utf-8")).digest()[:8],
+                    "big",
+                )
+            )
+            candidate = None
+            reason = ""
+            for attempt in range(config.max_retries):
+                try:
+                    candidate = create_candidate(source.image, source.boxes, config, preview_rng, variant_index=attempt + 1)
+                    break
+                except CandidateRejected as exc:
+                    reason = str(exc)
+            if candidate is None:
+                raise InputError(f"å¤‰æ›ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ã‚’ä½œã‚Œã¾ã›ã‚“ã§ã—ãŸã€‚{reason}")
+            self.output_preview.show_image(draw_boxes(candidate.image, candidate.boxes))
+            class_ids = ", ".join(str(box.class_id) for box in candidate.boxes) or "ãƒ©ãƒ™ãƒ«ãªã—"
+            transform_text = ", ".join(candidate.plan.operations)
+            if "rotate" in candidate.plan.operations:
+                transform_text += f"ï¼ˆ{candidate.plan.angle:.1f}Â°ï¼‰"
+            if "brightness" in candidate.plan.operations:
+                transform_text += f" æ˜Žåº¦{candidate.plan.brightness * 100:.0f}%"
+            self.preview_info.setText(f"å¤‰æ›: {transform_text}ã€€|ã€€ç‰©ä½“æ•°: {len(candidate.boxes)}ã€€|ã€€ã‚¯ãƒ©ã‚¹ID: {class_ids}")
+        except Exception as exc:
+            self._last_source_image = None
+            self.input_preview.clear_image("å…¥åŠ›ç”»åƒã‚’èª­ã¿è¾¼ã‚ã¾ã›ã‚“")
+            self.output_preview.clear_image("ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ã‚’è¡¨ç¤ºã§ãã¾ã›ã‚“")
+            for tile in (self.brightness_min_preview, self.brightness_original_preview, self.brightness_max_preview):
+                tile.clear_image("ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ã‚’è¡¨ç¤ºã§ãã¾ã›ã‚“")
+            self.preview_info.setText(str(exc))
+
+    def _start_generation(self) -> None:
+        if self.worker and self.worker.isRunning():
+            return
+        try:
+            config = self._config()
+            validate_config(config)
+            images = list_image_files(config.images_dir)
+            if not images:
+                raise InputError(f"å…¥åŠ›ç”»åƒãŒã‚ã‚Šã¾ã›ã‚“: {config.images_dir}")
+            if not config.labels_dir.is_dir():
+                raise InputError(f"å…¥åŠ›ãƒ©ãƒ™ãƒ«ãƒ•ã‚©ãƒ«ãƒ€ãŒå­˜åœ¨ã—ã¾ã›ã‚“: {config.labels_dir}")
+            if config.output_dir == config.images_dir or config.output_dir == config.labels_dir:
+                raise InputError("å‡ºåŠ›å…ˆã¯å…¥åŠ›ç”»åƒãƒ»ãƒ©ãƒ™ãƒ«ãƒ•ã‚©ãƒ«ãƒ€ã¨åˆ†ã‘ã¦ãã ã•ã„ã€‚")
+        except (InputError, OSError) as exc:
+            QMessageBox.warning(self, "è¨­å®šã‚’ç¢ºèªã—ã¦ãã ã•ã„", str(exc))
+            return
+
+        self.progress_bar.setValue(0)
+        self.log.appendPlainText("--- ç”Ÿæˆã‚’é–‹å§‹ã—ã¾ã™ ---")
+        self.status_label.setText("åˆæœŸåŒ–ä¸­â€¦")
+        self.worker = GenerationWorker(config)
+        self.worker.progress_changed.connect(self._on_progress)
+        self.worker.log_message.connect(self.log.appendPlainText)
+        self.worker.preview_ready.connect(self._show_saved_preview)
+        self.worker.finished.connect(self._on_finished)
+        self._set_busy(True)
+        self.worker.start()
+
+    def _set_busy(self, busy: bool) -> None:
+        self.start_button.setEnabled(not busy)
+        self.stop_button.setEnabled(busy)
+        for widget in (
+            self.images_picker, self.labels_picker, self.output_picker,
+            self.rotate_check, self.rotate_angle, self.hflip_check, self.vflip_check,
+            self.brightness_check, self.brightness_min, self.brightness_max,
+            self.noise_check, self.noise_strength, self.copies_spin, self.seed_spin, self.retries_spin,
+        ):
+            widget.setEnabled(not busy)
+
+    def _request_stop(self) -> None:
+        if self.worker and self.worker.isRunning():
+            self.worker.request_stop()
+            self.stop_button.setEnabled(False)
+            self.status_label.setText("åœæ­¢è¦æ±‚ã‚’å—ã‘ä»˜ã‘ã¾ã—ãŸã€‚ç¾åœ¨ã®ç”»åƒã¨ãƒ©ãƒ™ãƒ«ã‚’ä¿å­˜å¾Œã«åœæ­¢ã—ã¾ã™â€¦")
+
+    def _on_progress(self, current_file: int, total_files: int, generated: int, target: int, source_name: str) -> None:
+        percentage = int(current_file * 100 / total_files) if total_files else 0
+        self.progress_bar.setValue(percentage)
+        self.status_label.setText(
+            f"å‡¦ç†ä¸­: {source_name}ã€€|ã€€å…¥åŠ› {current_file}/{total_files}ã€€|ã€€ç”Ÿæˆ {generated}/{target}"
+        )
+        self.stats_label.setText(
+            f"å…¥åŠ›ç”»åƒ {total_files:,}æžšã€€|ã€€ç›®æ¨™ç”Ÿæˆ {target:,}æžšã€€|ã€€ç”Ÿæˆæ¸ˆã¿ {generated:,}æžš"
+        )
+
+    def _show_saved_preview(self, image_path: str, label_path: str) -> None:
+        image = cv2.imread(image_path, cv2.IMREAD_COLOR)
+        if image is None:
+            return
+        try:
+            boxes = parse_yolo_labels(Path(label_path))
+        except InputError:
+            return
+        self.output_preview.show_image(draw_boxes(image, boxes))
+        class_ids = ", ".join(str(box.class_id) for box in boxes) or "ãƒ©ãƒ™ãƒ«ãªã—"
+        self.preview_info.setText(f"å‡ºåŠ›ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼: {Path(image_path).name}ã€€|ã€€ç‰©ä½“æ•°: {len(boxes)}ã€€|ã€€ã‚¯ãƒ©ã‚¹ID: {class_ids}")
+
+    def _on_finished(self) -> None:
+        self._set_busy(False)
+        if not self.worker:
+            return
+        if self.worker.error:
+            self.status_label.setText("å‡¦ç†ã‚’çµ‚äº†ã—ã¾ã—ãŸï¼ˆã‚¨ãƒ©ãƒ¼ï¼‰")
+            self.log.appendPlainText(f"ã‚¨ãƒ©ãƒ¼: {self.worker.error}")
+            QMessageBox.critical(self, "ç”Ÿæˆã‚¨ãƒ©ãƒ¼", self.worker.error)
+            return
+        report = self.worker.report or {}
+        generated, target = int(report.get("generated", 0)), int(report.get("target", 0))
+        shortage = max(0, target - generated)
+        halted = bool(report.get("halted", False))
+        self.progress_bar.setValue(100 if not halted else self.progress_bar.value())
+        result = f"ç”Ÿæˆæ¸ˆã¿ {generated:,}/{target:,}æžš"
+        if report.get("skipped_sources") or report.get("skipped_outputs"):
+            result += f"ã€€|ã€€å…¥åŠ›ã‚¹ã‚­ãƒƒãƒ— {report.get('skipped_sources', 0)}ä»¶ã€€|ã€€ç”Ÿæˆã‚¹ã‚­ãƒƒãƒ— {report.get('skipped_outputs', 0)}æžš"
+        if shortage:
+            result += f"ã€€|ã€€ç›®æ¨™æœªé” {shortage:,}æžš"
+        if halted:
+            result = "åœæ­¢ã—ã¾ã—ãŸã€‚" + result
+        else:
+            result = "å®Œäº†ã€‚" + result
+        self.status_label.setText(result)
+        self.log.appendPlainText(result)
+        self._update_counts()
+
+    def closeEvent(self, event) -> None:
+        if self.worker and self.worker.isRunning():
+            QMessageBox.information(self, "å‡¦ç†ä¸­", "åœæ­¢ãƒœã‚¿ãƒ³ã§å‡¦ç†ã‚’åœæ­¢ã—ã¦ã‹ã‚‰é–‰ã˜ã¦ãã ã•ã„ã€‚")
+            event.ignore()
+            return
+        event.accept()
+
