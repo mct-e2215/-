@@ -54,6 +54,19 @@ class GeometryTests(unittest.TestCase):
         self.assertAlmostEqual(result.width, 0.4)
         self.assertAlmostEqual(result.height, 0.2)
 
+    def test_rotation_box_growth_comes_only_from_rotated_rectangle_bounds(self) -> None:
+        box = YoloBox(0, 0.5, 0.5, 0.2, 0.2)
+        plan = TransformPlan(("rotate",), angle=30.0)
+        result = transform_boxes((box,), affine_for_plan(plan))[0]
+        expected = 0.2 * (np.cos(np.deg2rad(30.0)) + np.sin(np.deg2rad(30.0)))
+        self.assertAlmostEqual(result.width, expected)
+        self.assertAlmostEqual(result.height, expected)
+
+    def test_rotated_canvas_corners_are_filled_without_scaling_objects(self) -> None:
+        image = np.full((640, 640, 3), 123, dtype=np.uint8)
+        result = apply_plan(image, (), TransformPlan(("rotate",), angle=30.0), random.Random(1))
+        self.assertTrue(np.all(result.image == 123))
+
     def test_rotation_then_horizontal_flip_uses_same_order_as_pixels(self) -> None:
         box = YoloBox(2, 0.25, 0.25, 0.1, 0.2)
         plan = TransformPlan(("rotate", "hflip"), angle=90.0, hflip=True)
@@ -64,7 +77,7 @@ class GeometryTests(unittest.TestCase):
         self.assertAlmostEqual(result.height, 0.1)
 
     def test_out_of_frame_box_rejects_entire_candidate_instead_of_clamping(self) -> None:
-        boxes = (YoloBox(0, 0.04, 0.5, 0.06, 0.2), YoloBox(7, 0.5, 0.5, 0.1, 0.1))
+        boxes = (YoloBox(0, 0.04, 0.15, 0.06, 0.1), YoloBox(7, 0.5, 0.5, 0.1, 0.1))
         plan = TransformPlan(("rotate",), angle=30.0)
         with self.assertRaises(CandidateRejected):
             transform_boxes(boxes, affine_for_plan(plan))
@@ -201,7 +214,7 @@ class GeneratorTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
             images, labels = self._make_input(root)
-            (labels / "sample.txt").write_text("0 0.04 0.5 0.06 0.2\n", encoding="utf-8")
+            (labels / "sample.txt").write_text("0 0.04 0.15 0.06 0.1\n", encoding="utf-8")
             log: list[str] = []
             config = AugmentConfig(
                 images, labels, root / "out", copies_per_image=1,

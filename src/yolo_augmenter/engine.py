@@ -247,8 +247,8 @@ def affine_for_plan(plan: TransformPlan, width: int = CANVAS_SIZE, height: int =
     if "rotate" in plan.operations:
         radians = math.radians(plan.angle)
         cosine, sine = math.cos(radians), math.sin(radians)
-        # Expand by |cos|+|sin| so the rotated square covers all output corners.
-        cover_scale = abs(cosine) + abs(sine)
+        # Keep object scale unchanged; reflected borders fill the newly exposed corners.
+        cover_scale = 1.0
         cx, cy = (width - 1) / 2.0, (height - 1) / 2.0
         rotation = np.array(
             [
@@ -334,7 +334,7 @@ def apply_plan(
             matrix,
             (width, height),
             flags=cv2.INTER_LINEAR,
-            borderMode=cv2.BORDER_REPLICATE,
+            borderMode=cv2.BORDER_REFLECT_101,
         )
     else:
         # Photometric operations must leave annotation values exactly unchanged.
