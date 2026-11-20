@@ -69,6 +69,7 @@ class AugmentConfig:
     noise_strength: int = 8
     seed: int = 42
     max_retries: int = 50
+    tighten_boxes: bool = False
 
 
 @dataclass(frozen=True)
@@ -318,17 +319,125 @@ def transform_boxes(
     return tuple(transformed)
 
 
+def _box_for_mask(mask: np.ndarray, class_id: int, width: int, height: int) -> YoloBox:
+    ys, xs = np.nonzero(mask)
+    if len(xs) == 0:
+        raise CandidateRejected(f"class {class_id} の推定マスクが空です。")
+    left, right = int(xs.min()), int(xs.max()) + 1
+    top, bottom = int(ys.min()), int(ys.max()) + 1
+    return YoloBox(
+        class_id,
+        (left + right) / (2.0 * width),
+        (top + bottom) / (2.0 * height),
+        (right - left) / width,
+        (bottom - top) / height,
+    )
+
+
+def boxes_from_masks(
+    masks: tuple[np.ndarray, ...],
+    boxes: tuple[YoloBox, ...],
+    width: int = CANVAS_SIZE,
+    height: int = CANVAS_SIZE,
+) -> tuple[YoloBox, ...]:
+    if len(masks) != len(boxes):
+        raise InputError("物体マスクとYOLOラベルの数が一致しません。")
+    expected_shape = (height, width)
+    if any(mask.ndim != 2 or mask.shape != expected_shape for mask in masks):
+        raise InputError("物体マスクのサイズが画像サイズと一致しません。")
+    return tuple(_box_for_mask(mask, box.class_id, width, height) for mask, box in zip(masks, boxes))
+
+
+def segment_boxes_grabcut(image: np.ndarray, boxes: tuple[YoloBox, ...], iterations: int = 4) -> tuple[np.ndarray, ...]:
+    """Estimate per-box object masks with GrabCut; use the original rectangle if uncertain."""
+    height, width = image.shape[:2]
+    results: list[np.ndarray] = []
+    for box in boxes:
+        left = max(0, int(math.floor((box.x_center - box.width / 2.0) * width)))
+        right = min(width, int(math.ceil((box.x_center + box.width / 2.0) * width)))
+        top = max(0, int(math.floor((box.y_center - box.height / 2.0) * height)))
+        bottom = min(height, int(math.ceil((box.y_center + box.height / 2.0) * height)))
+        box_width, box_height = right - left, bottom - top
+        fallback = np.zeros((height, width), dtype=np.uint8)
+        fallback[top:bottom, left:right] = 255
+        if box_width < 8 or box_height < 8:
+            results.append(fallback)
+            continue
+
+        margin = max(5, int(round(max(box_width, box_height) * 0.12)))
+        crop_left, crop_top = max(0, left - margin), max(0, top - margin)
+        crop_right, crop_bottom = min(width, right + margin), min(height, bottom + margin)
+        crop = image[crop_top:crop_bottom, crop_left:crop_right]
+        rect = (left - crop_left, top - crop_top, box_width, box_height)
+        gc_mask = np.zeros(crop.shape[:2], dtype=np.uint8)
+        background_model = np.zeros((1, 65), dtype=np.float64)
+        foreground_model = np.zeros((1, 65), dtype=np.float64)
+        try:
+            cv2.grabCut(
+                crop,
+                gc_mask,
+                rect,
+                background_model,
+                foreground_model,
+                iterations,
+                cv2.GC_INIT_WITH_RECT,
+            )
+        except cv2.error:
+            results.append(fallback)
+            continue
+
+        foreground = np.isin(gc_mask, (cv2.GC_FGD, cv2.GC_PR_FGD)).astype(np.uint8)
+        local_top, local_bottom = top - crop_top, bottom - crop_top
+        local_left, local_right = left - crop_left, right - crop_left
+        foreground[:local_top, :] = 0
+        foreground[local_bottom:, :] = 0
+        foreground[:, :local_left] = 0
+        foreground[:, local_right:] = 0
+        component_count, component_labels, stats, _ = cv2.connectedComponentsWithStats(foreground, 8)
+        if component_count <= 1:
+            results.append(fallback)
+            continue
+        largest_area = int(stats[1:, cv2.CC_STAT_AREA].max())
+        minimum_area = max(4, int(largest_area * 0.005))
+        clean = np.zeros_like(foreground)
+        for component_id in range(1, component_count):
+            if int(stats[component_id, cv2.CC_STAT_AREA]) >= minimum_area:
+                clean[component_labels == component_id] = 1
+        area = int(clean.sum())
+        if area < box_width * box_height * 0.02 or area > box_width * box_height * 0.98:
+            results.append(fallback)
+            continue
+        ys, xs = np.nonzero(clean)
+        if len(xs) == 0:
+            results.append(fallback)
+            continue
+        tight_area = (int(xs.max()) - int(xs.min()) + 1) * (int(ys.max()) - int(ys.min()) + 1)
+        if tight_area >= box_width * box_height * 0.98:
+            results.append(fallback)
+            continue
+        full_mask = np.zeros((height, width), dtype=np.uint8)
+        full_mask[crop_top:crop_bottom, crop_left:crop_right] = clean * 255
+        results.append(full_mask)
+    return tuple(results)
+
+
 def apply_plan(
     image: np.ndarray,
     boxes: tuple[YoloBox, ...],
     plan: TransformPlan,
     rng: random.Random,
+    object_masks: tuple[np.ndarray, ...] | None = None,
 ) -> Candidate:
     height, width = image.shape[:2]
+    if object_masks is not None:
+        starting_boxes = boxes_from_masks(object_masks, boxes, width, height)
+    else:
+        starting_boxes = boxes
     geometry_changed = "rotate" in plan.operations or plan.hflip or plan.vflip
     if geometry_changed:
         matrix = affine_for_plan(plan, width, height)
-        transformed_boxes = transform_boxes(boxes, matrix, width, height)
+        # Validate the tight source boxes before warping; this rejects any cropped object.
+        transform_boxes(starting_boxes, matrix, width, height)
         output = cv2.warpAffine(
             image,
             matrix,
@@ -336,9 +445,23 @@ def apply_plan(
             flags=cv2.INTER_LINEAR,
             borderMode=cv2.BORDER_REFLECT_101,
         )
+        if object_masks is not None:
+            transformed_masks = tuple(
+                cv2.warpAffine(
+                    mask,
+                    matrix,
+                    (width, height),
+                    flags=cv2.INTER_NEAREST,
+                    borderMode=cv2.BORDER_CONSTANT,
+                    borderValue=0,
+                )
+                for mask in object_masks
+            )
+            transformed_boxes = boxes_from_masks(transformed_masks, boxes, width, height)
+        else:
+            transformed_boxes = transform_boxes(boxes, matrix, width, height)
     else:
-        # Photometric operations must leave annotation values exactly unchanged.
-        transformed_boxes = boxes
+        transformed_boxes = starting_boxes
         output = image.copy()
     if "brightness" in plan.operations:
         output = np.clip(output.astype(np.float32) * plan.brightness, 0.0, 255.0).astype(np.uint8)
@@ -356,9 +479,10 @@ def create_candidate(
     config: AugmentConfig,
     rng: random.Random,
     variant_index: int = 0,
+    object_masks: tuple[np.ndarray, ...] | None = None,
 ) -> Candidate:
     plan = sample_plan(config, rng, variant_index)
-    return apply_plan(image, boxes, plan, rng)
+    return apply_plan(image, boxes, plan, rng, object_masks=object_masks)
 
 
 def boxes_to_text(boxes: tuple[YoloBox, ...]) -> str:
@@ -487,6 +611,11 @@ class ImageGenerator:
                 self.on_progress(source_index, len(image_paths), generated, target, current_name)
                 continue
 
+            object_masks = (
+                segment_boxes_grabcut(source.image, source.boxes)
+                if self.config.tighten_boxes and source.boxes
+                else None
+            )
             sequence = _next_sequence(out_images, out_labels, image_path.stem)
             for output_index in range(self.config.copies_per_image):
                 if self.stop_event.is_set():
@@ -503,6 +632,7 @@ class ImageGenerator:
                             self.config,
                             rng,
                             variant_index=output_index + retry,
+                            object_masks=object_masks,
                         )
                         break
                     except CandidateRejected as exc:
@@ -562,4 +692,5 @@ def draw_boxes(image: np.ndarray, boxes: tuple[YoloBox, ...]) -> np.ndarray:
         cv2.rectangle(preview, (x1, y1), (x2, y2), color, 2)
         cv2.putText(preview, f"class {box.class_id}", (x1, max(16, y1 - 5)), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 1, cv2.LINE_AA)
     return preview
+
 
