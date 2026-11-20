@@ -44,6 +44,7 @@ from .engine import (
     draw_boxes,
     list_image_files,
     read_image,
+    segment_boxes_grabcut,
     validate_config,
     parse_yolo_labels,
 )
@@ -246,6 +247,10 @@ class MainWindow(QMainWindow):
         transform_form.addRow("左右反転", self.hflip_check)
         self.vflip_check = QCheckBox("上下反転を適用")
         transform_form.addRow("上下反転", self.vflip_check)
+        self.tighten_check = QCheckBox("画像から物体領域を推定して枠を絞る")
+        self.tighten_check.setChecked(True)
+        self.tighten_check.setToolTip("GrabCutで物体マスクを推定します。推定が不確かな場合は入力枠を使います。")
+        transform_form.addRow("ボックス", self.tighten_check)
 
         self.brightness_check = QCheckBox("明度変更を適用")
         self.brightness_check.setChecked(True)
@@ -370,7 +375,7 @@ class MainWindow(QMainWindow):
         self.image_combo.currentIndexChanged.connect(self._update_preview)
         self.copies_spin.valueChanged.connect(self._update_counts)
         for widget in (
-            self.rotate_check, self.hflip_check, self.vflip_check, self.brightness_check,
+            self.rotate_check, self.hflip_check, self.vflip_check, self.tighten_check, self.brightness_check,
             self.noise_check,
         ):
             widget.toggled.connect(self._update_preview)
@@ -426,6 +431,7 @@ class MainWindow(QMainWindow):
             noise_strength=self.noise_strength.value(),
             seed=self.seed_spin.value(),
             max_retries=self.retries_spin.value(),
+            tighten_boxes=self.tighten_check.isChecked(),
         )
 
     def _refresh_input_choices(self) -> None:
@@ -501,6 +507,7 @@ class MainWindow(QMainWindow):
                 raise InputError(f"対応するラベルファイルがありません: {label_path}")
             boxes = parse_yolo_labels(label_path)
             config = self._config(require_output=False)
+            object_masks = segment_boxes_grabcut(image, boxes) if config.tighten_boxes and boxes else None
             preview_rng = random.Random(
                 int.from_bytes(
                     hashlib.sha256(f"{config.seed}:{image_path.name}:preview".encode("utf-8")).digest()[:8],
@@ -511,7 +518,14 @@ class MainWindow(QMainWindow):
             reason = ""
             for attempt in range(config.max_retries):
                 try:
-                    candidate = create_candidate(image, boxes, config, preview_rng, variant_index=attempt + 1)
+                    candidate = create_candidate(
+                        image,
+                        boxes,
+                        config,
+                        preview_rng,
+                        variant_index=attempt + 1,
+                        object_masks=object_masks,
+                    )
                     break
                 except CandidateRejected as exc:
                     reason = str(exc)
@@ -524,7 +538,10 @@ class MainWindow(QMainWindow):
                 transform_text += f"（{candidate.plan.angle:.1f}°）"
             if "brightness" in candidate.plan.operations:
                 transform_text += f" 明度{candidate.plan.brightness * 100:.0f}%"
-            self.preview_info.setText(f"変換: {transform_text}　|　物体数: {len(candidate.boxes)}　|　クラスID: {class_ids}")
+            box_mode = "物体領域推定ON" if config.tighten_boxes else "入力枠を使用"
+            self.preview_info.setText(
+                f"変換: {transform_text}　|　枠: {box_mode}　|　物体数: {len(candidate.boxes)}　|　クラスID: {class_ids}"
+            )
         except Exception as exc:
             self.output_preview.clear_image("ラベルがないため変換できません")
             self.preview_info.setText(str(exc))
@@ -563,7 +580,7 @@ class MainWindow(QMainWindow):
         for widget in (
             self.images_picker, self.labels_picker, self.output_picker,
             self.rotate_check, self.rotate_angle, self.hflip_check, self.vflip_check,
-            self.brightness_check, self.brightness_min, self.brightness_max,
+            self.tighten_check, self.brightness_check, self.brightness_min, self.brightness_max,
             self.noise_check, self.noise_strength, self.copies_spin, self.seed_spin, self.retries_spin,
         ):
             widget.setEnabled(not busy)
@@ -629,4 +646,5 @@ class MainWindow(QMainWindow):
             event.ignore()
             return
         event.accept()
+
 
