@@ -414,10 +414,6 @@ def segment_boxes_grabcut(image: np.ndarray, boxes: tuple[YoloBox, ...], iterati
         if len(xs) == 0:
             results.append(fallback)
             continue
-        tight_area = (int(xs.max()) - int(xs.min()) + 1) * (int(ys.max()) - int(ys.min()) + 1)
-        if tight_area >= box_width * box_height * 0.98:
-            results.append(fallback)
-            continue
         full_mask = np.zeros((height, width), dtype=np.uint8)
         full_mask[crop_top:crop_bottom, crop_left:crop_right] = clean * 255
         results.append(full_mask)
