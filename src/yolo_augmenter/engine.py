@@ -368,27 +368,30 @@ def segment_boxes_grabcut(image: np.ndarray, boxes: tuple[YoloBox, ...], iterati
         crop_left, crop_top = max(0, left - margin), max(0, top - margin)
         crop_right, crop_bottom = min(width, right + margin), min(height, bottom + margin)
         crop = image[crop_top:crop_bottom, crop_left:crop_right]
-        rect = (left - crop_left, top - crop_top, box_width, box_height)
         gc_mask = np.zeros(crop.shape[:2], dtype=np.uint8)
+        local_top, local_bottom = top - crop_top, bottom - crop_top
+        local_left, local_right = left - crop_left, right - crop_left
+        gc_mask[local_top:local_bottom, local_left:local_right] = cv2.GC_PR_FGD
+        seed_center = ((local_left + local_right) // 2, (local_top + local_bottom) // 2)
+        seed_radius = (max(1, int(round(box_width * 0.18))), max(1, int(round(box_height * 0.18))))
+        cv2.ellipse(gc_mask, seed_center, seed_radius, 0, 0, 360, cv2.GC_FGD, thickness=-1)
         background_model = np.zeros((1, 65), dtype=np.float64)
         foreground_model = np.zeros((1, 65), dtype=np.float64)
         try:
             cv2.grabCut(
                 crop,
                 gc_mask,
-                rect,
+                (0, 0, crop.shape[1], crop.shape[0]),
                 background_model,
                 foreground_model,
                 iterations,
-                cv2.GC_INIT_WITH_RECT,
+                cv2.GC_INIT_WITH_MASK,
             )
         except cv2.error:
             results.append(fallback)
             continue
 
         foreground = np.isin(gc_mask, (cv2.GC_FGD, cv2.GC_PR_FGD)).astype(np.uint8)
-        local_top, local_bottom = top - crop_top, bottom - crop_top
-        local_left, local_right = left - crop_left, right - crop_left
         foreground[:local_top, :] = 0
         foreground[local_bottom:, :] = 0
         foreground[:, :local_left] = 0
