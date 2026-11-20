@@ -21,6 +21,20 @@ IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png"}
 JPEG_QUALITY = 95
 
 
+def read_image(path: str | Path, flags: int = cv2.IMREAD_COLOR) -> np.ndarray | None:
+    """Decode an image through Python's Unicode-aware file API (Windows-safe)."""
+    try:
+        encoded = np.fromfile(str(path), dtype=np.uint8)
+    except (OSError, ValueError):
+        return None
+    if encoded.size == 0:
+        return None
+    try:
+        return cv2.imdecode(encoded, flags)
+    except cv2.error:
+        return None
+
+
 class InputError(ValueError):
     """An input folder, image, or annotation does not meet the requirements."""
 
@@ -155,7 +169,7 @@ def load_source(image_path: Path, labels_dir: Path) -> SourceImage:
     label_path = labels_dir / f"{image_path.stem}.txt"
     if not label_path.is_file():
         raise InputError(f"対応するラベルファイルがありません: {label_path}")
-    image = cv2.imread(str(image_path), cv2.IMREAD_COLOR)
+    image = read_image(image_path, cv2.IMREAD_COLOR)
     if image is None:
         raise InputError(f"画像を読み込めません: {image_path}")
     height, width = image.shape[:2]

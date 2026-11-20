@@ -43,7 +43,7 @@ from .engine import (
     create_candidate,
     draw_boxes,
     list_image_files,
-    load_source,
+    read_image,
     validate_config,
     parse_yolo_labels,
 )
@@ -458,6 +458,7 @@ class MainWindow(QMainWindow):
     def _update_preview(self, *_args) -> None:
         path_text = self.image_combo.currentData()
         if not path_text:
+            self._last_source_image = None
             self.input_preview.clear_image()
             self.output_preview.clear_image()
             for tile in (self.brightness_min_preview, self.brightness_original_preview, self.brightness_max_preview):
@@ -465,8 +466,9 @@ class MainWindow(QMainWindow):
             return
         image_path = Path(path_text)
         try:
-            source = load_source(image_path, self.labels_picker.path())
-            image = source.image
+            image = read_image(image_path, cv2.IMREAD_COLOR)
+            if image is None:
+                raise InputError(f"画像を読み込めません: {image_path}")
             self._last_source_image = image
             self.input_preview.show_image(image)
             low = np.clip(image.astype(np.float32) * (self.brightness_min.value() / 100.0), 0, 255).astype(np.uint8)
@@ -477,6 +479,27 @@ class MainWindow(QMainWindow):
             self.brightness_min_preview.show_image(low)
             self.brightness_original_preview.show_image(image)
             self.brightness_max_preview.show_image(high)
+
+        except Exception as exc:
+            self._last_source_image = None
+            self.input_preview.clear_image("入力画像を読み込めません")
+            self.output_preview.clear_image("プレビューを表示できません")
+            for tile in (self.brightness_min_preview, self.brightness_original_preview, self.brightness_max_preview):
+                tile.clear_image("プレビューを表示できません")
+            self.preview_info.setText(str(exc))
+            return
+
+        height, width = image.shape[:2]
+        if (width, height) != (640, 640):
+            self.output_preview.clear_image("640×640ではないため変換できません")
+            self.preview_info.setText(f"入力画像サイズ: {width}×{height}（必要サイズ: 640×640）")
+            return
+
+        try:
+            label_path = self.labels_picker.path() / f"{image_path.stem}.txt"
+            if not label_path.is_file():
+                raise InputError(f"対応するラベルファイルがありません: {label_path}")
+            boxes = parse_yolo_labels(label_path)
             config = self._config(require_output=False)
             preview_rng = random.Random(
                 int.from_bytes(
@@ -488,7 +511,7 @@ class MainWindow(QMainWindow):
             reason = ""
             for attempt in range(config.max_retries):
                 try:
-                    candidate = create_candidate(source.image, source.boxes, config, preview_rng, variant_index=attempt + 1)
+                    candidate = create_candidate(image, boxes, config, preview_rng, variant_index=attempt + 1)
                     break
                 except CandidateRejected as exc:
                     reason = str(exc)
@@ -503,11 +526,7 @@ class MainWindow(QMainWindow):
                 transform_text += f" 明度{candidate.plan.brightness * 100:.0f}%"
             self.preview_info.setText(f"変換: {transform_text}　|　物体数: {len(candidate.boxes)}　|　クラスID: {class_ids}")
         except Exception as exc:
-            self._last_source_image = None
-            self.input_preview.clear_image("入力画像を読み込めません")
-            self.output_preview.clear_image("プレビューを表示できません")
-            for tile in (self.brightness_min_preview, self.brightness_original_preview, self.brightness_max_preview):
-                tile.clear_image("プレビューを表示できません")
+            self.output_preview.clear_image("ラベルがないため変換できません")
             self.preview_info.setText(str(exc))
 
     def _start_generation(self) -> None:
@@ -566,7 +585,7 @@ class MainWindow(QMainWindow):
         )
 
     def _show_saved_preview(self, image_path: str, label_path: str) -> None:
-        image = cv2.imread(image_path, cv2.IMREAD_COLOR)
+        image = read_image(image_path, cv2.IMREAD_COLOR)
         if image is None:
             return
         try:

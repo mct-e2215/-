@@ -23,6 +23,7 @@ from yolo_augmenter.engine import (
     apply_plan,
     load_source,
     parse_yolo_labels,
+    read_image,
     transform_boxes,
 )
 
@@ -182,6 +183,19 @@ class GeneratorTests(unittest.TestCase):
             (labels / "sample.txt").unlink()
             with self.assertRaises(InputError):
                 load_source(images / "sample.png", labels)
+
+    def test_image_reader_handles_non_ascii_folder_names(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            image_dir = Path(temp) / "日本語フォルダー"
+            image_dir.mkdir()
+            path = image_dir / "トマト.jpg"
+            image = np.full((640, 640, 3), (20, 80, 140), dtype=np.uint8)
+            success, encoded = cv2.imencode(".jpg", image)
+            self.assertTrue(success)
+            path.write_bytes(encoded.tobytes())
+            decoded = read_image(path)
+            self.assertIsNotNone(decoded)
+            self.assertEqual(decoded.shape, (640, 640, 3))
 
     def test_retry_limit_skips_a_cropped_sample(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
